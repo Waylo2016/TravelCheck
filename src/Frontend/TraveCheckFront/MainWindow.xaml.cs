@@ -28,11 +28,10 @@ namespace TraveCheckFront
             bool? success = fileDialog.ShowDialog();
             if (success == true)
             {
-                filename = fileDialog.SafeFileName;
-                fullFilename = fileDialog.FileName;
+                filename = fileDialog.SafeFileName; // displays the filename to the user   
+                fullFilename = fileDialog.FileName; // collects the full filepath for python to convert it
                 tbInfo.Text = filename;
-                RunCSVConverter(fullFilename);
-                Console.ReadLine();
+                RunCSVConverter(fullFilename); // passes the file location through to the csv converter
                 
             } else
             {
@@ -41,13 +40,13 @@ namespace TraveCheckFront
         }
 
         static void RunCSVConverter(string fullFilename) {
-            Runtime.PythonDLL = "C:\\Users\\Stijn\\AppData\\Local\\Programs\\Python\\Python312\\python312.dll";
+            Runtime.PythonDLL = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "AppData\\Local\\Programs\\Python\\Python313\\python313.dll"); // automatically selects the 'user' filepath, then selects Python.dll
             PythonEngine.Initialize();
             using (Py.GIL())
             {
                 var PythonScript = Py.Import("csvreader");
                 var message = new PyString($"{fullFilename}");
-                var meowsies = PythonScript.InvokeMethod("csvreaderxmlwriter", new PyObject[] {message});
+                var meowsies = PythonScript.InvokeMethod("csvreaderxmlwriter", new PyObject[] {message}); // sends through the file location to the python script
             }
 
             
