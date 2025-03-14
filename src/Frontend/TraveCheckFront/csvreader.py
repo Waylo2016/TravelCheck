@@ -9,6 +9,7 @@ def csvreaderxmlwriter(filename):
     with open(file_path, "w") as file: # writes/creates xmlunformeddata for reading by Java program
         file.write(df.to_xml(index = False, root_name='Werknemers', row_name='Werknemer'))
         file.close
+    return 1
   
 
 

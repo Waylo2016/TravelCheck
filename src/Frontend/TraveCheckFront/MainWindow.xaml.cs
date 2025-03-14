@@ -13,6 +13,7 @@ namespace TraveCheckFront
         
         string filename;
         string fullFilename;
+        int endValue = 0;
         public MainWindow()
         {
             InitializeComponent();
@@ -31,24 +32,30 @@ namespace TraveCheckFront
                 filename = fileDialog.SafeFileName; // displays the filename to the user   
                 fullFilename = fileDialog.FileName; // collects the full filepath for python to convert it
                 tbInfo.Text = filename;
-                RunCSVConverter(fullFilename); // passes the file location through to the csv converter
-                
+                RunCSVConverter(fullFilename, endValue); // passes the file location through to the csv converter
             } else
             {
                 //you selected nothing you doofus
             }
         }
 
-        static void RunCSVConverter(string fullFilename) {
+        static void RunCSVConverter(string fullFilename, int endValue) {
             Runtime.PythonDLL = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "AppData\\Local\\Programs\\Python\\Python313\\python313.dll"); // automatically selects the 'user' filepath, then selects Python.dll
-            PythonEngine.Initialize();
-            using (Py.GIL())
+            while (endValue != 1)
             {
-                var PythonScript = Py.Import("csvreader");
-                var message = new PyString($"{fullFilename}");
-                var meowsies = PythonScript.InvokeMethod("csvreaderxmlwriter", new PyObject[] {message}); // sends through the file location to the python script
+
+                PythonEngine.Initialize();
+                using (Py.GIL())
+                {
+
+                    var PythonScript = Py.Import("csvreader");
+                    var message = new PyString($"{fullFilename}");
+                    var meowsies = PythonScript.InvokeMethod("csvreaderxmlwriter", new PyObject[] { message }); // sends through the file location to the python script
+                    endValue = meowsies.As<int>();
+                }
             }
 
+            PythonEngine.Shutdown();
             
         }
 
