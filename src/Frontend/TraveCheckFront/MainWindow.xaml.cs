@@ -1,26 +1,28 @@
 ﻿using System.IO;
 using System.Windows;
 using Microsoft.Win32;
-using Python.Runtime;
+using System.Diagnostics;
 
 
 
 namespace TraveCheckFront
 {
-   
+
     public partial class MainWindow : Window
     {
-        
+
         string filename;
         string fullFilename;
         int endValue = 0;
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
         public void btnFileSelect_Click(object sender, RoutedEventArgs e)
         {
+            RunCSVConverter CSVConverter = new RunCSVConverter();
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Filter = "Comma Separated Values file | *.csv";
             fileDialog.InitialDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads"); //Automatically will always select the users 'Downloads' folder
@@ -32,31 +34,11 @@ namespace TraveCheckFront
                 filename = fileDialog.SafeFileName; // displays the filename to the user   
                 fullFilename = fileDialog.FileName; // collects the full filepath for python to convert it
                 tbInfo.Text = filename;
-                RunCSVConverter(fullFilename, endValue); // passes the file location through to the csv converter
+                CSVConverter.CSVConverter(fullFilename, endValue); // passes the file location through to the csv converter
             } else
             {
                 //you selected nothing you doofus
             }
-        }
-
-        static void RunCSVConverter(string fullFilename, int endValue) {
-            Runtime.PythonDLL = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "AppData\\Local\\Programs\\Python\\Python313\\python313.dll"); // automatically selects the 'user' filepath, then selects Python.dll
-            while (endValue != 1)
-            {
-
-                PythonEngine.Initialize();
-                using (Py.GIL())
-                {
-
-                    var PythonScript = Py.Import("csvreader");
-                    var message = new PyString($"{fullFilename}");
-                    var meowsies = PythonScript.InvokeMethod("csvreaderxmlwriter", new PyObject[] { message }); // sends through the file location to the python script
-                    endValue = meowsies.As<int>();
-                }
-            }
-
-            PythonEngine.Shutdown();
-            
         }
 
     }

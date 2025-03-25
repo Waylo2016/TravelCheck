@@ -48,3 +48,4 @@ C:\Users\stijn\TravelCheck\src\Frontend\TraveCheckFront\obj\Debug\net8.0-windows
 C:\Users\stijn\TravelCheck\src\Frontend\TraveCheckFront\obj\Debug\net8.0-windows\TraveCheckFront.pdb
 C:\Users\stijn\TravelCheck\src\Frontend\TraveCheckFront\obj\Debug\net8.0-windows\TraveCheckFront.genruntimeconfig.cache
 C:\Users\stijn\TravelCheck\src\Frontend\TraveCheckFront\obj\Debug\net8.0-windows\ref\TraveCheckFront.dll
+C:\Users\stijn\TravelCheck\src\Frontend\TraveCheckFront\bin\Debug\net8.0-windows\python313.dll

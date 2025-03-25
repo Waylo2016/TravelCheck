@@ -1,7 +1,5 @@
 package org.InfragoIT;
 
-
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -20,26 +18,28 @@ class Werknemer {
     }
 }
 
-class Oorsprongsland { // maak klasse van oorsprongsland
+class Country {
+    String Country;
+}
+
+class Oorsprongsland extends Country { // maak klasse van oorsprongsland
     String DepartureAirportName;
-    String CountryOfDeparture;
     String DepartureDate;
 
     public Oorsprongsland() {
+        super();
         this.DepartureAirportName = DepartureAirportName;
-        this.CountryOfDeparture = CountryOfDeparture;
         this.DepartureDate = DepartureDate;
     }
 }
 
-class Aankomstland { // maak klasse voor aankomstland
+class Aankomstland extends Country{ // maak klasse voor aankomstland
     String ArrivalAirportName;
-    String CountryOfArrival;
     String ArrivalDate;
 
     public Aankomstland() {
+        super();
         this.ArrivalAirportName = ArrivalAirportName;
-        this.CountryOfArrival = CountryOfArrival;
         this.ArrivalDate = ArrivalDate;
     }
 }
@@ -79,12 +79,12 @@ public class App {
             bedrijf.Bedrijfsnaam = reader.Bedrijfsnamen.get(indexCounter);
             bedrijf.Afdeling = reader.Afdelingen.get(indexCounter);
             oorsprongsland.DepartureAirportName = reader.DepartureAirports.get(indexCounter);
-            oorsprongsland.CountryOfDeparture = reader.DepartureCountries.get(indexCounter);
+            oorsprongsland.Country = reader.DepartureCountries.get(indexCounter);
             oorsprongsland.DepartureDate = reader.DepartureDates.get(indexCounter);
             werknemer.RedenVoorReis = reader.TravelReasons.get(indexCounter);
             werknemer.MethodOfTravel = reader.TravelMethods.get(indexCounter);
             aankomstland.ArrivalAirportName = reader.ArrivalAirports.get(indexCounter);
-            aankomstland.CountryOfArrival = reader.ArrivalCountries.get(indexCounter);
+            aankomstland.Country = reader.ArrivalCountries.get(indexCounter);
             aankomstland.ArrivalDate = reader.ArrivalDates.get(indexCounter);
             indexCounter++;
 
