@@ -1,8 +1,6 @@
 package org.InfragoIT;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 
 class Werknemer {
     String Personeelsnaam;
@@ -10,39 +8,16 @@ class Werknemer {
     String RedenVoorReis;
     String MethodOfTravel;
 
+
     public Werknemer() { // maak klasse voor werknemer
         this.Personeelsnaam = Personeelsnaam;
         this.Email = Email;
         this.RedenVoorReis = RedenVoorReis;
         this.MethodOfTravel = MethodOfTravel;
+
     }
 }
 
-class Country {
-    String Country;
-}
-
-class Oorsprongsland extends Country { // maak klasse van oorsprongsland
-    String DepartureAirportName;
-    String DepartureDate;
-
-    public Oorsprongsland() {
-        super();
-        this.DepartureAirportName = DepartureAirportName;
-        this.DepartureDate = DepartureDate;
-    }
-}
-
-class Aankomstland extends Country{ // maak klasse voor aankomstland
-    String ArrivalAirportName;
-    String ArrivalDate;
-
-    public Aankomstland() {
-        super();
-        this.ArrivalAirportName = ArrivalAirportName;
-        this.ArrivalDate = ArrivalDate;
-    }
-}
 
 class Bedrijf { // maak klasse voor bedrijven
     String Bedrijfsnaam;
@@ -60,20 +35,16 @@ public class App {
 
 
     public static void main(String[] args) {
-
+/*
         try {
             String url = "jdbc:mysql://infragotraveldatabase.mysql.database.azure.com";
             String user = "InfraGoAdmin";
             String password = "InfraGo20";
             conn = DriverManager.getConnection(url, user, password);
-            String Schema = conn.getSchema();
-            System.out.println(Schema);
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
-
+ */
         Werknemer werknemer = new Werknemer();
         Oorsprongsland oorsprongsland = new Oorsprongsland();
         Aankomstland aankomstland = new Aankomstland();
@@ -83,24 +54,33 @@ public class App {
 
         int indexCounter = 0;
         for (String Personeelsnummer : reader.Personeelsnummers) {
+            Personeelsnummer = reader.Personeelsnummers.get(indexCounter);
             werknemer.Personeelsnaam = reader.Personeelsnamen.get(indexCounter);
             werknemer.Email = reader.EmailAdressen.get(indexCounter);
             bedrijf.Bedrijfsnaam = reader.Bedrijfsnamen.get(indexCounter);
             bedrijf.Afdeling = reader.Afdelingen.get(indexCounter);
-            oorsprongsland.DepartureAirportName = reader.DepartureAirports.get(indexCounter);
+            oorsprongsland.Airport = reader.DepartureAirports.get(indexCounter);
             oorsprongsland.Country = reader.DepartureCountries.get(indexCounter);
             oorsprongsland.DepartureDate = reader.DepartureDates.get(indexCounter);
             werknemer.RedenVoorReis = reader.TravelReasons.get(indexCounter);
             werknemer.MethodOfTravel = reader.TravelMethods.get(indexCounter);
-            aankomstland.ArrivalAirportName = reader.ArrivalAirports.get(indexCounter);
+            aankomstland.Airport = reader.ArrivalAirports.get(indexCounter);
             aankomstland.Country = reader.ArrivalCountries.get(indexCounter);
             aankomstland.ArrivalDate = reader.ArrivalDates.get(indexCounter);
             indexCounter++;
 
-            // System.out.println(werknemer.Personeelsnaam);
+            System.out.println(aankomstland.Airport + " " + oorsprongsland.Airport + " " +  Personeelsnummer);
+/*
+            try {
+                String Schema = conn.getSchema();
+                System.out.println(Schema);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
+ */
+
         }
-
-
     }
 }
 

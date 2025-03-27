@@ -18,17 +18,17 @@ import java.util.ArrayList;
 public class XMLReader {
     String userHome = System.getProperty("user.home");
     public final String FILENAME = userHome +"/TravelCheck/src/Frontend/TraveCheckFront/XmlFolder/XmlUnformedData.xml"; //read CSV file, change to allow for file-dropping
-    ArrayList<String> Personeelsnummers = new ArrayList<String>(); // create Arraylists to allow for data transfer between XMLReader and Main
-    ArrayList<String> Personeelsnamen = new ArrayList<String>();
-    ArrayList<String> EmailAdressen = new ArrayList<String>();
-    ArrayList<String> Bedrijfsnamen = new ArrayList<String>();
-    ArrayList<String> Afdelingen = new ArrayList<String>();
+    ArrayList<String> Personeelsnummers = new ArrayList<>(); // create Arraylists to allow for data transfer between XMLReader and Main
+    ArrayList<String> Personeelsnamen = new ArrayList<>();
+    ArrayList<String> EmailAdressen = new ArrayList<>();
+    ArrayList<String> Bedrijfsnamen = new ArrayList<>();
+    ArrayList<String> Afdelingen = new ArrayList<>();
     ArrayList<String> DepartureAirports = new ArrayList<String>();
     ArrayList<String> DepartureCountries = new ArrayList<String>();
     ArrayList<String> ArrivalAirports = new ArrayList<String>();
     ArrayList<String> ArrivalCountries = new ArrayList<String>();
-    ArrayList<String> TravelMethods = new ArrayList<String>();
-    ArrayList<String> TravelReasons= new ArrayList<String>();
+    ArrayList<String> TravelMethods = new ArrayList<>();
+    ArrayList<String> TravelReasons= new ArrayList<>();
     ArrayList<String> DepartureDates = new ArrayList<String>();
     ArrayList<String> ArrivalDates= new ArrayList<String>();
 
