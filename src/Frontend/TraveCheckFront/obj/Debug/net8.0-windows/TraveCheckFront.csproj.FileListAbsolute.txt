@@ -23,7 +23,6 @@ C:\Users\Stijn\source\repos\Waylo2016\TravelCheck\src\Frontend\TraveCheckFront\o
 C:\Users\Stijn\source\repos\Waylo2016\TravelCheck\src\Frontend\TraveCheckFront\bin\Debug\net8.0-windows\Python.Runtime.dll
 C:\Users\Stijn\source\repos\Waylo2016\TravelCheck\src\Frontend\TraveCheckFront\obj\Debug\net8.0-windows\TraveChe.E6F6A099.Up2Date
 C:\Users\Stijn\source\repos\Waylo2016\TravelCheck\src\Frontend\TraveCheckFront\bin\Debug\net8.0-windows\csvreader.py
-C:\Users\stijn\TravelCheck\src\Frontend\TraveCheckFront\bin\Debug\net8.0-windows\csvreader.py
 C:\Users\stijn\TravelCheck\src\Frontend\TraveCheckFront\bin\Debug\net8.0-windows\TraveCheckFront.exe
 C:\Users\stijn\TravelCheck\src\Frontend\TraveCheckFront\bin\Debug\net8.0-windows\TraveCheckFront.deps.json
 C:\Users\stijn\TravelCheck\src\Frontend\TraveCheckFront\bin\Debug\net8.0-windows\TraveCheckFront.runtimeconfig.json
@@ -48,4 +47,3 @@ C:\Users\stijn\TravelCheck\src\Frontend\TraveCheckFront\obj\Debug\net8.0-windows
 C:\Users\stijn\TravelCheck\src\Frontend\TraveCheckFront\obj\Debug\net8.0-windows\TraveCheckFront.pdb
 C:\Users\stijn\TravelCheck\src\Frontend\TraveCheckFront\obj\Debug\net8.0-windows\TraveCheckFront.genruntimeconfig.cache
 C:\Users\stijn\TravelCheck\src\Frontend\TraveCheckFront\obj\Debug\net8.0-windows\ref\TraveCheckFront.dll
-C:\Users\stijn\TravelCheck\src\Frontend\TraveCheckFront\bin\Debug\net8.0-windows\python313.dll

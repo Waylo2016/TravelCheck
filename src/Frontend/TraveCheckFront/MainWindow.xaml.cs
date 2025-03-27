@@ -29,16 +29,22 @@ namespace TraveCheckFront
             fileDialog.Title = "Please select the CSV file for comparison";
 
             bool? success = fileDialog.ShowDialog();
-            if (success == true)
+
+            while (endValue == 0) // if endvalue = 0 run the code
             {
-                filename = fileDialog.SafeFileName; // displays the filename to the user   
-                fullFilename = fileDialog.FileName; // collects the full filepath for python to convert it
-                tbInfo.Text = filename;
-                CSVConverter.CSVConverter(fullFilename, endValue); // passes the file location through to the csv converter
-            } else
-            {
-                //you selected nothing you doofus
-            }
+                if (success == true)
+                {
+                    filename = fileDialog.SafeFileName; // displays the filename to the user   
+                    fullFilename = fileDialog.FileName; // collects the full filepath for python to convert it
+                    tbInfo.Text = filename;
+                    CSVConverter.CSVConverter(fullFilename, endValue); // passes the file location through to the csv converter
+                    endValue = endValue;
+                }
+                else
+                {
+                    //you selected nothing you doofus
+                }
+            } 
         }
 
     }

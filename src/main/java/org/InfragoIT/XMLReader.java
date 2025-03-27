@@ -16,7 +16,8 @@ import java.util.ArrayList;
 
 
 public class XMLReader {
-    public static final String FILENAME = "C:/Users/stijn/Reqsproject/XmlUnformedData.xml"; //read CSV file, change to allow for file-dropping
+    String userHome = System.getProperty("user.home");
+    public final String FILENAME = userHome +"/TravelCheck/src/Frontend/TraveCheckFront/XmlFolder/XmlUnformedData.xml"; //read CSV file, change to allow for file-dropping
     ArrayList<String> Personeelsnummers = new ArrayList<String>(); // create Arraylists to allow for data transfer between XMLReader and Main
     ArrayList<String> Personeelsnamen = new ArrayList<String>();
     ArrayList<String> EmailAdressen = new ArrayList<String>();

@@ -59,11 +59,13 @@ public class App {
     static Connection conn;
 
     public static void main(String[] args) {
+        /*
         try {
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bamtravelcheck" + "user=root&password=welkom123");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+         */
 
         Werknemer werknemer = new Werknemer();
         Oorsprongsland oorsprongsland = new Oorsprongsland();
