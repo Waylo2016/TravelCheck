@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{A329779E-FA83-4459-83C7-B5CA054243F9}|TraveCheckFront.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A329779E-FA83-4459-83C7-B5CA054243F9}|TraveCheckFront.csproj|c:\\users\\stijn\\travelcheck\\src\\frontend\\travecheckfront\\xmlfolder\\xmlunformeddata.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A329779E-FA83-4459-83C7-B5CA054243F9}|TraveCheckFront.csproj|solutionrelative:xmlfolder\\xmlunformeddata.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A329779E-FA83-4459-83C7-B5CA054243F9}|TraveCheckFront.csproj|c:\\users\\stijn\\travelcheck\\src\\frontend\\travecheckfront\\csvreader.py||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A329779E-FA83-4459-83C7-B5CA054243F9}|TraveCheckFront.csproj|solutionrelative:csvreader.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A329779E-FA83-4459-83C7-B5CA054243F9}|TraveCheckFront.csproj|c:\\users\\stijn\\travelcheck\\src\\frontend\\travecheckfront\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{A329779E-FA83-4459-83C7-B5CA054243F9}|TraveCheckFront.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A329779E-FA83-4459-83C7-B5CA054243F9}|TraveCheckFront.csproj|c:\\users\\stijn\\travelcheck\\src\\frontend\\travecheckfront\\xmlfolder\\xmlunformeddata.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{A329779E-FA83-4459-83C7-B5CA054243F9}|TraveCheckFront.csproj|solutionrelative:xmlfolder\\xmlunformeddata.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,26 +38,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "XmlUnformedData.xml",
               "DocumentMoniker": "C:\\Users\\stijn\\TravelCheck\\src\\Frontend\\TraveCheckFront\\XmlFolder\\XmlUnformedData.xml",
               "RelativeDocumentMoniker": "XmlFolder\\XmlUnformedData.xml",
               "ToolTip": "C:\\Users\\stijn\\TravelCheck\\src\\Frontend\\TraveCheckFront\\XmlFolder\\XmlUnformedData.xml",
               "RelativeToolTip": "XmlFolder\\XmlUnformedData.xml",
-              "ViewState": "AgIAAMwCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAMwCAAAAAAAAAAAAAMwCAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
               "WhenOpened": "2025-03-17T08:23:19.662Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "csvreader.py",
               "DocumentMoniker": "C:\\Users\\stijn\\TravelCheck\\src\\Frontend\\TraveCheckFront\\csvreader.py",
               "RelativeDocumentMoniker": "csvreader.py",
               "ToolTip": "C:\\Users\\stijn\\TravelCheck\\src\\Frontend\\TraveCheckFront\\csvreader.py",
               "RelativeToolTip": "csvreader.py",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
               "WhenOpened": "2025-03-14T11:13:55.395Z",
               "EditorCaption": ""
@@ -70,14 +70,14 @@
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\stijn\\TravelCheck\\src\\Frontend\\TraveCheckFront\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAwwDMAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAmwDEAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-11T14:25:24.966Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\stijn\\TravelCheck\\src\\Frontend\\TraveCheckFront\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",

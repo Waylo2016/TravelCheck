@@ -13,12 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="csvreader.py">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="XmlFolder\" />
   </ItemGroup>
 
