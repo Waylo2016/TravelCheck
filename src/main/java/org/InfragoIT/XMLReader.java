@@ -113,7 +113,7 @@ public class XMLReader {
                     System.out.println("Datum van vertrek : " + DepDate);
                     System.out.println("Aankomst datum : " + ArrDate);
                      */
-                    FileDelyeeter.FileDeleter();
+                    // FileDelyeeter.FileDeleter();
                 }
             }
 

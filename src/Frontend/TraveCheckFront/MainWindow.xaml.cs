@@ -44,6 +44,7 @@ namespace TraveCheckFront
                 {
                     //you selected nothing you doofus
                 }
+                break;
             } 
         }
 

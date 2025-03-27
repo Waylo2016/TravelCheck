@@ -58,14 +58,21 @@ public class App {
 
     static Connection conn;
 
+
     public static void main(String[] args) {
-        /*
+
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bamtravelcheck" + "user=root&password=welkom123");
+            String url = "jdbc:mysql://infragotraveldatabase.mysql.database.azure.com";
+            String user = "InfraGoAdmin";
+            String password = "InfraGo20";
+            conn = DriverManager.getConnection(url, user, password);
+            String Schema = conn.getSchema();
+            System.out.println(Schema);
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-         */
+
 
         Werknemer werknemer = new Werknemer();
         Oorsprongsland oorsprongsland = new Oorsprongsland();
@@ -90,8 +97,10 @@ public class App {
             aankomstland.ArrivalDate = reader.ArrivalDates.get(indexCounter);
             indexCounter++;
 
-            System.out.println(werknemer.Personeelsnaam);
+            // System.out.println(werknemer.Personeelsnaam);
         }
+
+
     }
 }
 

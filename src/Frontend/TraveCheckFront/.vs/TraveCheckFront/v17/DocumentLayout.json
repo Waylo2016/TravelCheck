@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\stijn\\TravelCheck\\src\\Frontend\\TraveCheckFront\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A329779E-FA83-4459-83C7-B5CA054243F9}|TraveCheckFront.csproj|c:\\users\\stijn\\travelcheck\\src\\frontend\\travecheckfront\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A329779E-FA83-4459-83C7-B5CA054243F9}|TraveCheckFront.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A329779E-FA83-4459-83C7-B5CA054243F9}|TraveCheckFront.csproj|c:\\users\\stijn\\travelcheck\\src\\frontend\\travecheckfront\\runcsvconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A329779E-FA83-4459-83C7-B5CA054243F9}|TraveCheckFront.csproj|solutionrelative:runcsvconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A329779E-FA83-4459-83C7-B5CA054243F9}|TraveCheckFront.csproj|c:\\users\\stijn\\travelcheck\\src\\frontend\\travecheckfront\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A329779E-FA83-4459-83C7-B5CA054243F9}|TraveCheckFront.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A329779E-FA83-4459-83C7-B5CA054243F9}|TraveCheckFront.csproj|c:\\users\\stijn\\travelcheck\\src\\frontend\\travecheckfront\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -22,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
@@ -34,7 +34,8 @@
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-03-17T08:19:46.646Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -42,26 +43,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\stijn\\TravelCheck\\src\\Frontend\\TraveCheckFront\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\stijn\\TravelCheck\\src\\Frontend\\TraveCheckFront\\MainWindow.xaml.cs*",
-              "RelativeToolTip": "MainWindow.xaml.cs*",
-              "ViewState": "AgIAABYAAAAAAAAAAAAzwCkAAAARAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\stijn\\TravelCheck\\src\\Frontend\\TraveCheckFront\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBsAAAB3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-25T13:41:41.412Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "RunCSVConverter.cs",
               "DocumentMoniker": "C:\\Users\\stijn\\TravelCheck\\src\\Frontend\\TraveCheckFront\\RunCSVConverter.cs",
               "RelativeDocumentMoniker": "RunCSVConverter.cs",
-              "ToolTip": "C:\\Users\\stijn\\TravelCheck\\src\\Frontend\\TraveCheckFront\\RunCSVConverter.cs",
-              "RelativeToolTip": "RunCSVConverter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\stijn\\TravelCheck\\src\\Frontend\\TraveCheckFront\\RunCSVConverter.cs*",
+              "RelativeToolTip": "RunCSVConverter.cs*",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-25T13:41:08.127Z",
               "EditorCaption": ""

@@ -18,10 +18,7 @@ namespace TraveCheckFront
             xml.Save(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "TravelCheck\\src\\Frontend\\TraveCheckFront\\XmlFolder\\XmlUnformedData.xml"));
             return returnvalue = 1;
             
-            if (returnvalue == 1)
-            {
-                Environment.Exit(0);
-            }
+
         }
-    }s
+    }
 }
