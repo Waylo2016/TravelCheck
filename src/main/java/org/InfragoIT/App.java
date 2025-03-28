@@ -50,6 +50,7 @@ public class App {
         Aankomstland aankomstland = new Aankomstland();
         Bedrijf bedrijf = new Bedrijf();
         XMLReader reader = new XMLReader();
+        Country country = new Country();
 
 
         int indexCounter = 0;
@@ -69,7 +70,12 @@ public class App {
             aankomstland.ArrivalDate = reader.ArrivalDates.get(indexCounter);
             indexCounter++;
 
-            System.out.println(aankomstland.Airport + " " + oorsprongsland.Airport + " " +  Personeelsnummer);
+            if ((indexCounter == reader.Personeelsnummers.size() - 1)) {
+                System.out.println("Het meest populaire land is: " + (country.popularCountry(reader.ArrivalCountries.get(indexCounter), reader.DepartureCountries.get(indexCounter))).toString());
+            }
+
+
+            // System.out.println(aankomstland.Airport + " " + oorsprongsland.Airport + " " +  Personeelsnummer);
 /*
             try {
                 String Schema = conn.getSchema();

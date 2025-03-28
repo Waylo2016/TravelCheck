@@ -1,11 +1,13 @@
 package org.InfragoIT;
 
 import java.io.File;
+import java.nio.file.*;
 
 public class FileDelyeeter{
     public static void FileDeleter(){
-        String userHome = System.getProperty("user.home");
-        File DoneWithXML = new File(userHome+"/TravelCheck/src/Frontend/TraveCheckFront/XmlFolder/XmlUnformedData.xml");
-        DoneWithXML.delete();
+        Path path = Paths.get(System.getProperty("user.home"), "TravelCheck", "src", "Frontend", "TraveCheckFront", "XmlFolder", "XmlUnformedData");
+        File file = path.toFile();
+        File newPath = new File(file.getAbsolutePath());
+        newPath.delete();
     }
 }
