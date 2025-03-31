@@ -16,10 +16,10 @@ class Country {
 
     }
 
-    public String popularCountry(String AankomstLand, String VertrekLand) {
+    public String popularCountry(String ArrivalCountry, String DepartureCountry) { //count most popular arrival/departure country
         String popularCountry = "";
         Map<String, Integer> popularCountryCount = new HashMap<>();
-        updateFrequency(popularCountryCount, AankomstLand, VertrekLand);
+        updateCountryFrequency(popularCountryCount, ArrivalCountry, DepartureCountry);
         int maxCount = 0;
 
 
@@ -32,8 +32,31 @@ class Country {
         return popularCountry;
     }
 
-    private static void updateFrequency(Map<String, Integer> popularCountryCount, String AankomstLand, String VertrekLand) {
-        popularCountryCount.put(AankomstLand, popularCountryCount.getOrDefault(AankomstLand, 0) + 1);
-        popularCountryCount.put(VertrekLand, popularCountryCount.getOrDefault(VertrekLand, 0) + 1);
+    private static void updateCountryFrequency(Map<String, Integer> popularCountryCount, String ArrivalCountry, String DepartureCountry) {
+        popularCountryCount.put(ArrivalCountry, popularCountryCount.getOrDefault(ArrivalCountry, 0) + 1);
+        popularCountryCount.put(DepartureCountry, popularCountryCount.getOrDefault(DepartureCountry, 0) + 1);
+    }
+
+    public String popularAirport(String ArrivalAirport, String DepartureAirport){
+        String popularAirport = "";
+        Map<String, Integer> popularAirportCount = new HashMap<>();
+        updateAirportFrequency(popularAirportCount, ArrivalAirport, DepartureAirport);
+
+        int maxCount = 0;
+
+        for (Map.Entry<String, Integer> entry : popularAirportCount.entrySet()) {
+            if (entry.getValue() > maxCount) {
+                maxCount = entry.getValue();
+                popularAirport = entry.getKey();
+            }
+        }
+
+
+        return popularAirport;
+    }
+
+    private static void updateAirportFrequency(Map<String, Integer> popularAirportCount, String ArrivalAirport, String DepartureAirport) {
+        popularAirportCount.put(ArrivalAirport, popularAirportCount.getOrDefault(ArrivalAirport, 0) + 1);
+        popularAirportCount.put(DepartureAirport, popularAirportCount.getOrDefault(DepartureAirport, 0) + 1);
     }
 }

@@ -1,6 +1,6 @@
 package org.InfragoIT;
 
-import java.sql.Connection;
+import java.sql.*;
 
 class Werknemer {
     String Personeelsnaam;
@@ -35,7 +35,8 @@ public class App {
 
 
     public static void main(String[] args) {
-/*
+
+
         try {
             String url = "jdbc:mysql://infragotraveldatabase.mysql.database.azure.com";
             String user = "InfraGoAdmin";
@@ -44,13 +45,14 @@ public class App {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
- */
+
         Werknemer werknemer = new Werknemer();
         Oorsprongsland oorsprongsland = new Oorsprongsland();
         Aankomstland aankomstland = new Aankomstland();
         Bedrijf bedrijf = new Bedrijf();
         XMLReader reader = new XMLReader();
         Country country = new Country();
+        OutputFileCreator fileOut = new OutputFileCreator();
 
 
         int indexCounter = 0;
@@ -71,21 +73,37 @@ public class App {
             indexCounter++;
 
             if ((indexCounter == reader.Personeelsnummers.size() - 1)) {
-                System.out.println("Het meest populaire land is: " + (country.popularCountry(reader.ArrivalCountries.get(indexCounter), reader.DepartureCountries.get(indexCounter))).toString());
+                System.out.println("The most popular country is: " + (country.popularCountry(reader.ArrivalCountries.get(indexCounter), reader.DepartureCountries.get(indexCounter))));
+                fileOut.PopularCountry = country.popularCountry(reader.ArrivalCountries.get(indexCounter), reader.DepartureCountries.get(indexCounter));
+                System.out.println("The most popular airport is: " + (country.popularAirport(reader.ArrivalAirports.get(indexCounter), reader.DepartureAirports.get(indexCounter))));
+                fileOut.PopularAirport = country.popularAirport(reader.ArrivalAirports.get(indexCounter), reader.DepartureAirports.get(indexCounter));
             }
 
 
-            // System.out.println(aankomstland.Airport + " " + oorsprongsland.Airport + " " +  Personeelsnummer);
-/*
-            try {
-                String Schema = conn.getSchema();
-                System.out.println(Schema);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
+
+
+
+
+            // surrounded in comments cus code doesn't need to be implemented yet
+            /*
+
+             */
+
+        }
+
+        try {
+
+            String SQL = "{call bamtravelcheck.selectForEquation()}";
+            try (CallableStatement cstmt = conn.prepareCall(SQL)) {
+                ResultSet rs = cstmt.executeQuery();
+                while (rs.next()) {
+                    System.out.println(rs.getString(1));
+                }
+                // System.out.println(rs.getString(1));
             }
 
- */
-
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 }
