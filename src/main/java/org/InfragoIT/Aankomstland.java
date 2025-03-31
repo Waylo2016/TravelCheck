@@ -14,9 +14,6 @@ class Aankomstland extends Country { // maak klasse voor aankomstland
 
     public String returnMostCommonAirport(){
         String mostCommonAirport = "";
-
-
-
         return mostCommonAirport;
     }
 }

@@ -53,6 +53,7 @@ public class App {
         XMLReader reader = new XMLReader();
         Country country = new Country();
         OutputFileCreator fileOut = new OutputFileCreator();
+        SQL sql = new SQL();
 
 
         int indexCounter = 0;
@@ -79,32 +80,14 @@ public class App {
                 fileOut.PopularAirport = country.popularAirport(reader.ArrivalAirports.get(indexCounter), reader.DepartureAirports.get(indexCounter));
             }
 
+            try {
+                sql.SqlComparer(conn, Personeelsnummer, werknemer.Personeelsnaam, werknemer.Email, werknemer.RedenVoorReis, werknemer.MethodOfTravel, aankomstland.Airport,
+                        aankomstland.Country, aankomstland.ArrivalDate, oorsprongsland.Airport, oorsprongsland.Country, oorsprongsland.DepartureDate,
+                        bedrijf.Afdeling, bedrijf.Bedrijfsnaam);
 
-
-
-
-
-            // surrounded in comments cus code doesn't need to be implemented yet
-            /*
-
-             */
-
-        }
-
-        try {
-
-            String SQL = "{call bamtravelcheck.selectForEquation()}";
-            try (CallableStatement cstmt = conn.prepareCall(SQL)) {
-                ResultSet rs = cstmt.executeQuery();
-                while (rs.next()) {
-                    System.out.println(rs.getString(1));
-                }
-                // System.out.println(rs.getString(1));
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
             }
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
         }
     }
 }
-

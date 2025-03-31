@@ -96,23 +96,6 @@ public class XMLReader {
                     DepartureDates.add(DepDate);
                     ArrivalDates.add(ArrDate);
 
-
-                    /*
-                    System.out.println("Current Element :" + node.getNodeName()); // print data to console for debug
-                    System.out.println("Personeelsnummer : " + Personeelsnummer);
-                    System.out.println("Personeelsnaam : " + personeelsnaam);
-                    System.out.println("Email Adres : " + EmailAdres);
-                    System.out.println("Bedrijfsnaam : " + Bedrijfsnaam);
-                    System.out.println("Afdeling : " + Afdeling);
-                    System.out.println("Vertrek Luchthaven : " + VertAir);
-                    System.out.println("Land van vertrek : " + VertLand);
-                    System.out.println("Aankomst Luchthaven : " + AankAir);
-                    System.out.println("Land van aankomst : " + AankLand);
-                    System.out.println("Methode van vervoer : " + TravMeth);
-                    System.out.println("Reason for Travel : " + TravReason);
-                    System.out.println("Datum van vertrek : " + DepDate);
-                    System.out.println("Aankomst datum : " + ArrDate);
-                     */
                     // FileDelyeeter.FileDeleter();
                 }
             }
