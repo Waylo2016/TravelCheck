@@ -1,22 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\stijn\\TravelCheck\\src\\Frontend\\TraveCheckFront\\",
+  "WorkspaceRootPath": "C:\\Users\\Stijn\\source\\repos\\Waylo2016\\src\\Frontend\\TraveCheckFront\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A329779E-FA83-4459-83C7-B5CA054243F9}|TraveCheckFront.csproj|c:\\users\\stijn\\travelcheck\\src\\frontend\\travecheckfront\\xmlfolder\\xmlunformeddata.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{A329779E-FA83-4459-83C7-B5CA054243F9}|TraveCheckFront.csproj|solutionrelative:xmlfolder\\xmlunformeddata.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A329779E-FA83-4459-83C7-B5CA054243F9}|TraveCheckFront.csproj|c:\\users\\stijn\\travelcheck\\src\\frontend\\travecheckfront\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A329779E-FA83-4459-83C7-B5CA054243F9}|TraveCheckFront.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A329779E-FA83-4459-83C7-B5CA054243F9}|TraveCheckFront.csproj|c:\\users\\stijn\\travelcheck\\src\\frontend\\travecheckfront\\runcsvconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A329779E-FA83-4459-83C7-B5CA054243F9}|TraveCheckFront.csproj|c:\\users\\stijn\\source\\repos\\waylo2016\\src\\frontend\\travecheckfront\\runcsvconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A329779E-FA83-4459-83C7-B5CA054243F9}|TraveCheckFront.csproj|solutionrelative:runcsvconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A329779E-FA83-4459-83C7-B5CA054243F9}|TraveCheckFront.csproj|c:\\users\\stijn\\travelcheck\\src\\frontend\\travecheckfront\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A329779E-FA83-4459-83C7-B5CA054243F9}|TraveCheckFront.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{A329779E-FA83-4459-83C7-B5CA054243F9}|TraveCheckFront.csproj|c:\\users\\stijn\\source\\repos\\waylo2016\\src\\frontend\\travecheckfront\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A329779E-FA83-4459-83C7-B5CA054243F9}|TraveCheckFront.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,19 +18,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\stijn\\TravelCheck\\src\\Frontend\\TraveCheckFront\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "C:\\Users\\stijn\\TravelCheck\\src\\Frontend\\TraveCheckFront\\MainWindow.xaml",
-              "RelativeToolTip": "MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-17T08:19:46.646Z",
-              "IsPinned": true
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Bookmark",
@@ -47,39 +39,28 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "XmlUnformedData.xml",
-              "DocumentMoniker": "C:\\Users\\stijn\\TravelCheck\\src\\Frontend\\TraveCheckFront\\XmlFolder\\XmlUnformedData.xml",
-              "RelativeDocumentMoniker": "XmlFolder\\XmlUnformedData.xml",
-              "ToolTip": "C:\\Users\\stijn\\TravelCheck\\src\\Frontend\\TraveCheckFront\\XmlFolder\\XmlUnformedData.xml",
-              "RelativeToolTip": "XmlFolder\\XmlUnformedData.xml",
-              "ViewState": "AgIAAK4AAAAAAAAAAAAAAA0AAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2025-03-27T11:36:41.235Z",
+              "Title": "RunCSVConverter.cs",
+              "DocumentMoniker": "C:\\Users\\Stijn\\source\\repos\\Waylo2016\\src\\Frontend\\TraveCheckFront\\RunCSVConverter.cs",
+              "RelativeDocumentMoniker": "RunCSVConverter.cs",
+              "ToolTip": "C:\\Users\\Stijn\\source\\repos\\Waylo2016\\src\\Frontend\\TraveCheckFront\\RunCSVConverter.cs*",
+              "RelativeToolTip": "RunCSVConverter.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T14:23:01.505Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\stijn\\TravelCheck\\src\\Frontend\\TraveCheckFront\\MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Stijn\\source\\repos\\Waylo2016\\src\\Frontend\\TraveCheckFront\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\stijn\\TravelCheck\\src\\Frontend\\TraveCheckFront\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Stijn\\source\\repos\\Waylo2016\\src\\Frontend\\TraveCheckFront\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAAwBsAAAB3AAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T13:41:41.412Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RunCSVConverter.cs",
-              "DocumentMoniker": "C:\\Users\\stijn\\TravelCheck\\src\\Frontend\\TraveCheckFront\\RunCSVConverter.cs",
-              "RelativeDocumentMoniker": "RunCSVConverter.cs",
-              "ToolTip": "C:\\Users\\stijn\\TravelCheck\\src\\Frontend\\TraveCheckFront\\RunCSVConverter.cs",
-              "RelativeToolTip": "RunCSVConverter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T13:41:08.127Z"
+              "WhenOpened": "2025-03-11T14:25:24.966Z",
+              "EditorCaption": ""
             }
           ]
         }
