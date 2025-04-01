@@ -29,7 +29,7 @@ public class OutputFileCreator {
     public void OutputFileWriter(String ErrorWrong, String ErrorPnumber, String ErrorMsg, String ErrorRight) {
 
 
-        if (hasWritten == false) {
+        if (!hasWritten) {
             hasWritten = true;
             String[] header = {"Foutbericht: ", "Personeelsnummer van de fout", "Fout: ", "Had het moeten zijn: "};
             writer.writeNext(header);
