@@ -21,14 +21,14 @@ public class SQL {
     String ErrorWrong;
     String ErrorRight;
 
+
     public void SqlComparer(Connection conn, String personeelsnummer, String personeelsNaam, String Email, String RedenVoorReis, String MethodOfTravel, String AankomstAirpot, String AankomstLand, String AankomstDatum, String OorsprongsLand, String OorsprongsAirport, String OorsprongsDatum, String CompanyName, String Department) throws SQLException {
         OutputFileCreator fOut = new OutputFileCreator();
-        try {
-            String SQL = "{call bamtravelcheck.selectForEquation()}";
-            try (CallableStatement cstmt = conn.prepareCall(SQL)) {
-                ResultSet rs = cstmt.executeQuery();
-                while (rs.next()) {
-                    System.out.println(rs.getString(1));
+        String SQL = "{call bamtravelcheck.selectForEquation(?)}";
+        try (CallableStatement cstmt = conn.prepareCall(SQL)) {
+            cstmt.setString(1, personeelsnummer);
+            ResultSet rs = cstmt.executeQuery();
+            while (rs.next()) {
                         /*
                         column index numbers:
                         1 = Personeelsnummer
@@ -60,17 +60,26 @@ public class SQL {
                     DBArrivalCountry = rs.getString(12);
                     DBArrivalDate = rs.getString(13);
 
-                    if (!(DBDepartment.equals(Department))){
-                        ErrorMsg = "Department for " + DBDepartment + " is incorrect";
+                DBPname = DBPname.replaceAll("-", " ");
+                DBReasonForTravel = DBReasonForTravel.replaceAll("-", " ");
+                DBMethodOfTravel = DBMethodOfTravel.replaceAll("-", " ");
+                DBDepartureAirport = DBDepartureAirport.replaceAll("-", " ");
+                DBArrivalAirport = DBArrivalAirport.replaceAll("-", " ");
+                DBCompanyName = DBCompanyName.replaceAll("-", " ");
+
+
+                if (!DBDepartment.contains(Department)) {
+
+                    System.out.println(DBPnumber);
+                    System.out.println(personeelsnummer);
+                    ErrorMsg = "Department for " + DBPname + " is incorrect";
                         ErrorWrong = Department;
                         ErrorRight = DBDepartment;
-                        ErrorPnumber = (personeelsnummer;
-                        fOut.OutputFileCreator(ErrorWrong, ErrorPnumber, ErrorMsg, ErrorRight);
+                    ErrorPnumber = DBPnumber;
+                    fOut.OutputFileWriter(ErrorWrong, ErrorPnumber, ErrorMsg, ErrorRight);
                     }
-                }
+
             }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+            }
     }
 }

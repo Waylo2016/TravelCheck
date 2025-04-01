@@ -1,7 +1,6 @@
 package org.InfragoIT;
 
 import com.opencsv.CSVWriter;
-import com.opencsv.CSVWriter.*;
 
 
 import java.io.FileWriter;
@@ -11,31 +10,44 @@ import java.util.ArrayList;
 public class OutputFileCreator {
     String PopularCountry = "";
     String PopularAirport = "";
+    // flag to check if header is written
+    boolean hasWritten = false;
 
+    FileWriter OutputFile;
 
-    public void OutputFileCreator(String ErrorWrong, String ErrorPnumber, String ErrorMsg, String ErrorRight) {
+    {
         try {
-            String[] header = {"Foutbericht: ", "Personeelsnummer van de fout", "Fout: ", "Had het moeten zijn: "};
-            FileWriter OutputFile = new FileWriter("CompletedCheck.csv");
-            CSVWriter writer =  new CSVWriter(OutputFile);
-            try{
-                writer.writeNext(header);
-            } catch (IOException e){
-                e.printStackTrace();
-            }
-
-
-            ArrayList<> entries = new ArrayList();
-            entries.add(ErrorMsg);
-            entries.add(ErrorPnumber);
-            entries.add(ErrorWrong);
-            entries.add(ErrorRight);
-
-
-
-
+            OutputFile = new FileWriter("CompletedCheck.csv");
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
+
+    CSVWriter writer = new CSVWriter(OutputFile);
+
+
+    public void OutputFileWriter(String ErrorWrong, String ErrorPnumber, String ErrorMsg, String ErrorRight) {
+
+
+        if (hasWritten == false) {
+            hasWritten = true;
+            String[] header = {"Foutbericht: ", "Personeelsnummer van de fout", "Fout: ", "Had het moeten zijn: "};
+            writer.writeNext(header);
+            System.out.println("file should be created??");
+        }
+
+
+        ArrayList<String> entries = new ArrayList();
+        entries.add(ErrorMsg);
+        entries.add(ErrorPnumber);
+        entries.add(ErrorWrong);
+        entries.add(ErrorRight);
+
+        writer.writeNext(entries.toArray(new String[entries.size()]));
+        try {
+            writer.flush();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 

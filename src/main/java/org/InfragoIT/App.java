@@ -9,13 +9,14 @@ class Werknemer {
     String MethodOfTravel;
 
 
+
     public Werknemer() { // maak klasse voor werknemer
         this.Personeelsnaam = Personeelsnaam;
         this.Email = Email;
         this.RedenVoorReis = RedenVoorReis;
         this.MethodOfTravel = MethodOfTravel;
-
     }
+
 }
 
 
@@ -26,12 +27,15 @@ class Bedrijf { // maak klasse voor bedrijven
     public Bedrijf() {
         this.Afdeling = Afdeling;
         this.Bedrijfsnaam = Bedrijfsnaam;
+
     }
+
 }
 
 public class App {
 
     static Connection conn;
+    static boolean hasRun = false;
 
 
     public static void main(String[] args) {
@@ -71,7 +75,14 @@ public class App {
             aankomstland.Airport = reader.ArrivalAirports.get(indexCounter);
             aankomstland.Country = reader.ArrivalCountries.get(indexCounter);
             aankomstland.ArrivalDate = reader.ArrivalDates.get(indexCounter);
-            indexCounter++;
+
+
+            werknemer.Personeelsnaam = werknemer.Personeelsnaam.replaceAll("-", " ");
+            werknemer.RedenVoorReis = werknemer.RedenVoorReis.replaceAll("-", " ");
+            werknemer.MethodOfTravel = werknemer.MethodOfTravel.replaceAll("-", " ");
+            bedrijf.Bedrijfsnaam = bedrijf.Bedrijfsnaam.replaceAll("-", " ");
+            aankomstland.Airport = aankomstland.Airport.replaceAll("-", " ");
+            oorsprongsland.Airport = oorsprongsland.Airport.replaceAll("-", " ");
 
             if ((indexCounter == reader.Personeelsnummers.size() - 1)) {
                 System.out.println("The most popular country is: " + (country.popularCountry(reader.ArrivalCountries.get(indexCounter), reader.DepartureCountries.get(indexCounter))));
@@ -80,14 +91,21 @@ public class App {
                 fileOut.PopularAirport = country.popularAirport(reader.ArrivalAirports.get(indexCounter), reader.DepartureAirports.get(indexCounter));
             }
 
-            try {
-                sql.SqlComparer(conn, Personeelsnummer, werknemer.Personeelsnaam, werknemer.Email, werknemer.RedenVoorReis, werknemer.MethodOfTravel, aankomstland.Airport,
-                        aankomstland.Country, aankomstland.ArrivalDate, oorsprongsland.Airport, oorsprongsland.Country, oorsprongsland.DepartureDate,
-                        bedrijf.Afdeling, bedrijf.Bedrijfsnaam);
+            while (!hasRun) {
+                hasRun = true;
+                try {
+                    sql.SqlComparer(conn, Personeelsnummer, werknemer.Personeelsnaam, werknemer.Email, werknemer.RedenVoorReis, werknemer.MethodOfTravel, aankomstland.Airport,
+                            aankomstland.Country, aankomstland.ArrivalDate, oorsprongsland.Airport, oorsprongsland.Country, oorsprongsland.DepartureDate,
+                            bedrijf.Bedrijfsnaam, bedrijf.Afdeling);
 
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
             }
+
+
+            indexCounter++;
         }
+        hasRun = false;
     }
 }
