@@ -7,6 +7,11 @@ namespace TraveCheckFront
     {
         public int CSVConverter(string Filename, int returnvalue)
         {
+            string dir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "TravelCheck\\src\\Frontend\\TraveCheckFront\\XmlFolder\\XmlUnformedData.xml");
+            if (!File.Exists(dir) { 
+                File.Create(dir);
+            }
+
             returnvalue = 0;
             var lines = File.ReadAllLines(Filename);
             string[] headers = lines[0].Split(',').Select(x => x.Trim('\"')).ToArray();
