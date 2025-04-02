@@ -3,6 +3,7 @@ package org.InfragoIT;
 import java.sql.*;
 
 class Werknemer {
+    String Personeelsnummer;
     String Personeelsnaam;
     String Email;
     String RedenVoorReis;
@@ -11,6 +12,7 @@ class Werknemer {
 
 
     public Werknemer() { // maak klasse voor werknemer
+        this.Personeelsnummer = Personeelsnummer;
         this.Personeelsnaam = Personeelsnaam;
         this.Email = Email;
         this.RedenVoorReis = RedenVoorReis;
@@ -60,41 +62,30 @@ public class App {
         SQL sql = new SQL();
 
 
-        int indexCounter = 0;
-        for (String Personeelsnummer : reader.Personeelsnummers) {
-            Personeelsnummer = reader.Personeelsnummers.get(indexCounter);
-            werknemer.Personeelsnaam = reader.Personeelsnamen.get(indexCounter);
-            werknemer.Email = reader.EmailAdressen.get(indexCounter);
-            bedrijf.Bedrijfsnaam = reader.Bedrijfsnamen.get(indexCounter);
-            bedrijf.Afdeling = reader.Afdelingen.get(indexCounter);
-            oorsprongsland.Airport = reader.DepartureAirports.get(indexCounter);
-            oorsprongsland.Country = reader.DepartureCountries.get(indexCounter);
-            oorsprongsland.DepartureDate = reader.DepartureDates.get(indexCounter);
-            werknemer.RedenVoorReis = reader.TravelReasons.get(indexCounter);
-            werknemer.MethodOfTravel = reader.TravelMethods.get(indexCounter);
-            aankomstland.Airport = reader.ArrivalAirports.get(indexCounter);
-            aankomstland.Country = reader.ArrivalCountries.get(indexCounter);
-            aankomstland.ArrivalDate = reader.ArrivalDates.get(indexCounter);
+        Country countryCount = new Country();
+        for (xmlRecord current : reader.xmlRecords) {
 
+            current.werknemer.Personeelsnaam = current.werknemer.Personeelsnaam.replaceAll("-", " ");
+            current.werknemer.RedenVoorReis = current.werknemer.RedenVoorReis.replaceAll("-", " ");
+            current.werknemer.MethodOfTravel = current.werknemer.MethodOfTravel.replaceAll("-", " ");
+            current.bedrijf.Bedrijfsnaam = current.bedrijf.Bedrijfsnaam.replaceAll("-", " ");
+            current.aankomstland.Airport = current.aankomstland.Airport.replaceAll("-", " ");
+            current.oorsprongsland.Airport = current.oorsprongsland.Airport.replaceAll("-", " ");
 
-            werknemer.Personeelsnaam = werknemer.Personeelsnaam.replaceAll("-", " ");
-            werknemer.RedenVoorReis = werknemer.RedenVoorReis.replaceAll("-", " ");
-            werknemer.MethodOfTravel = werknemer.MethodOfTravel.replaceAll("-", " ");
-            bedrijf.Bedrijfsnaam = bedrijf.Bedrijfsnaam.replaceAll("-", " ");
-            aankomstland.Airport = aankomstland.Airport.replaceAll("-", " ");
-            oorsprongsland.Airport = oorsprongsland.Airport.replaceAll("-", " ");
-
-            if ((indexCounter == reader.Personeelsnummers.size() - 1)) {
-                System.out.println("The most popular country is: " + (country.popularCountry(reader.ArrivalCountries.get(indexCounter), reader.DepartureCountries.get(indexCounter))));
-                fileOut.PopularCountry = country.popularCountry(reader.ArrivalCountries.get(indexCounter), reader.DepartureCountries.get(indexCounter));
-                System.out.println("The most popular airport is: " + (country.popularAirport(reader.ArrivalAirports.get(indexCounter), reader.DepartureAirports.get(indexCounter))));
-                fileOut.PopularAirport = country.popularAirport(reader.ArrivalAirports.get(indexCounter), reader.DepartureAirports.get(indexCounter));
+            countryCount.popularCountry(current.aankomstland.Country, current.oorsprongsland.Country);
+            countryCount.popularAirport(current.aankomstland.Airport, current.oorsprongsland.Airport);
+            /*
+            if ((counter == current.werknemer.Personeelsnummer.size() - 1)) {
+                System.out.println("The most popular country is: " + (country.popularCountry(reader.ArrivalCountries.get(counter), reader.DepartureCountries.get(counter))));
+                fileOut.PopularCountry = country.popularCountry(reader.ArrivalCountries.get(counter), reader.DepartureCountries.get(counter));
+                System.out.println("The most popular airport is: " + (country.popularAirport(reader.ArrivalAirports.get(counter), reader.DepartureAirports.get(counter))));
+                fileOut.PopularAirport = country.popularAirport(reader.ArrivalAirports.get(counter), reader.DepartureAirports.get(counter));
             }
 
             while (!hasRun) {
                 hasRun = true;
                 try {
-                    sql.SqlComparer(conn, Personeelsnummer, werknemer.Personeelsnaam, werknemer.Email, werknemer.RedenVoorReis, werknemer.MethodOfTravel, aankomstland.Airport,
+                    sql.SqlComparer(conn, current.werknemer.Personeelsnummer, werknemer.Personeelsnaam, werknemer.Email, werknemer.RedenVoorReis, werknemer.MethodOfTravel, aankomstland.Airport,
                             aankomstland.Country, aankomstland.ArrivalDate, oorsprongsland.Airport, oorsprongsland.Country, oorsprongsland.DepartureDate,
                             bedrijf.Bedrijfsnaam, bedrijf.Afdeling);
 
@@ -103,9 +94,9 @@ public class App {
                 }
             }
 
-
-            indexCounter++;
+             */
         }
+        System.out.println(countryCount.popularCountry);
         hasRun = false;
     }
 }

@@ -18,6 +18,7 @@ import java.util.ArrayList;
 public class XMLReader {
     String userHome = System.getProperty("user.home");
     public final String FILENAME = userHome +"/TravelCheck/src/Frontend/TraveCheckFront/XmlFolder/XmlUnformedData.xml"; //read CSV file, change to allow for file-dropping
+    /*
     ArrayList<String> Personeelsnummers = new ArrayList<>(); // create Arraylists to allow for data transfer between XMLReader and Main
     ArrayList<String> Personeelsnamen = new ArrayList<>();
     ArrayList<String> EmailAdressen = new ArrayList<>();
@@ -31,6 +32,12 @@ public class XMLReader {
     ArrayList<String> TravelReasons= new ArrayList<>();
     ArrayList<String> DepartureDates = new ArrayList<String>();
     ArrayList<String> ArrivalDates= new ArrayList<String>();
+
+
+     */
+
+    ArrayList<xmlRecord> xmlRecords = new ArrayList<>();
+
 
     public XMLReader()
     {
@@ -66,22 +73,25 @@ public class XMLReader {
                 if (node.getNodeType() == Node.ELEMENT_NODE) {
 
                     Element element = (Element) node;
-
+                    xmlRecord current = new xmlRecord();
                     // get text
-                    String Personeelsnummer = element.getElementsByTagName("Personeelsnummer").item(0).getTextContent(); // read XML file into separate strings for printing and further use
-                    String personeelsnaam = element.getElementsByTagName("Personeelsnaam").item(0).getTextContent();
-                    String EmailAdres = element.getElementsByTagName("Email-adres").item(0).getTextContent();
-                    String Bedrijfsnaam = element.getElementsByTagName("Bedrijfsnaam").item(0).getTextContent();
-                    String Afdeling = element.getElementsByTagName("Afdeling").item(0).getTextContent();
-                    String VertAir = element.getElementsByTagName("Vertrek-Luchthaven").item(0).getTextContent();
-                    String VertLand = element.getElementsByTagName("Land-van-oorsprong").item(0).getTextContent();
-                    String AankAir = element.getElementsByTagName("Aankomst-Luchthaven").item(0).getTextContent();
-                    String AankLand = element.getElementsByTagName("Land-van-aankomst").item(0).getTextContent();
-                    String TravMeth = element.getElementsByTagName("Methode-van-vervoer").item(0).getTextContent();
-                    String TravReason = element.getElementsByTagName("Reason-for-travel").item(0).getTextContent();
-                    String DepDate = element.getElementsByTagName("Vertrekdatum").item(0).getTextContent();
-                    String ArrDate = element.getElementsByTagName("Aankomst-datum").item(0).getTextContent();
+                    current.werknemer.Personeelsnummer = element.getElementsByTagName("Personeelsnummer").item(0).getTextContent(); // read XML file into separate strings for printing and further use
+                    current.werknemer.Personeelsnaam = element.getElementsByTagName("Personeelsnaam").item(0).getTextContent();
+                    current.werknemer.Email = element.getElementsByTagName("Email-adres").item(0).getTextContent();
+                    current.bedrijf.Bedrijfsnaam = element.getElementsByTagName("Bedrijfsnaam").item(0).getTextContent();
+                    current.bedrijf.Afdeling = element.getElementsByTagName("Afdeling").item(0).getTextContent();
+                    current.oorsprongsland.Airport= element.getElementsByTagName("Vertrek-Luchthaven").item(0).getTextContent();
+                    current.oorsprongsland.Country = element.getElementsByTagName("Land-van-oorsprong").item(0).getTextContent();
+                    current.aankomstland.Airport = element.getElementsByTagName("Aankomst-Luchthaven").item(0).getTextContent();
+                    current.aankomstland.Country = element.getElementsByTagName("Land-van-aankomst").item(0).getTextContent();
+                    current.werknemer.MethodOfTravel = element.getElementsByTagName("Methode-van-vervoer").item(0).getTextContent();
+                    current.werknemer.RedenVoorReis = element.getElementsByTagName("Reason-for-travel").item(0).getTextContent();
+                    current.oorsprongsland.DepartureDate = element.getElementsByTagName("Vertrekdatum").item(0).getTextContent();
+                    current.aankomstland.ArrivalDate = element.getElementsByTagName("Aankomst-datum").item(0).getTextContent();
 
+                    xmlRecords.add(current);
+
+                    /*
                     Personeelsnummers.add(Personeelsnummer); // load data into ArrayList for use in Main
                     Personeelsnamen.add(personeelsnaam);
                     EmailAdressen.add(EmailAdres);
@@ -95,6 +105,7 @@ public class XMLReader {
                     TravelMethods.add(TravMeth);
                     DepartureDates.add(DepDate);
                     ArrivalDates.add(ArrDate);
+                     */
 
                     // FileDelyeeter.FileDeleter();
                 }
