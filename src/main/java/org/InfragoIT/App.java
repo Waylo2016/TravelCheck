@@ -3,20 +3,20 @@ package org.InfragoIT;
 import java.sql.*;
 
 class Werknemer {
-    String Personeelsnummer;
-    String Personeelsnaam;
-    String Email;
-    String RedenVoorReis;
-    String MethodOfTravel;
+    String Personeelsnummer = "";
+    String Personeelsnaam = "";
+    String Email = "";
+    String RedenVoorReis = "";
+    String MethodOfTravel = "";
 
 
 
     public Werknemer() { // maak klasse voor werknemer
-        this.Personeelsnummer = Personeelsnummer;
-        this.Personeelsnaam = Personeelsnaam;
-        this.Email = Email;
-        this.RedenVoorReis = RedenVoorReis;
-        this.MethodOfTravel = MethodOfTravel;
+        this.Personeelsnummer = "";
+        this.Personeelsnaam = "";
+        this.Email = "";
+        this.RedenVoorReis = "";
+        this.MethodOfTravel = "";
     }
 
 }
@@ -81,22 +81,23 @@ public class App {
                 System.out.println("The most popular airport is: " + (country.popularAirport(reader.ArrivalAirports.get(counter), reader.DepartureAirports.get(counter))));
                 fileOut.PopularAirport = country.popularAirport(reader.ArrivalAirports.get(counter), reader.DepartureAirports.get(counter));
             }
-
+            */
             while (!hasRun) {
                 hasRun = true;
                 try {
-                    sql.SqlComparer(conn, current.werknemer.Personeelsnummer, werknemer.Personeelsnaam, werknemer.Email, werknemer.RedenVoorReis, werknemer.MethodOfTravel, aankomstland.Airport,
-                            aankomstland.Country, aankomstland.ArrivalDate, oorsprongsland.Airport, oorsprongsland.Country, oorsprongsland.DepartureDate,
-                            bedrijf.Bedrijfsnaam, bedrijf.Afdeling);
+                    sql.SqlComparer(conn, current.werknemer.Personeelsnummer, current.werknemer.Personeelsnaam, current.werknemer.Email, current.werknemer.RedenVoorReis, current.werknemer.MethodOfTravel, current.aankomstland.Airport,
+                            current.aankomstland.Country, current.aankomstland.ArrivalDate, current.oorsprongsland.Airport, current.oorsprongsland.Country, current.oorsprongsland.DepartureDate,
+                            current.bedrijf.Bedrijfsnaam, current.bedrijf.Afdeling);
 
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }
             }
 
-             */
+
         }
         System.out.println(countryCount.popularCountry);
+        System.out.println(countryCount.popularAirport);
         hasRun = false;
     }
 }

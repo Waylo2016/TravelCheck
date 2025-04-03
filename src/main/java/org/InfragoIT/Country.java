@@ -7,16 +7,19 @@ class Country {
     String Airport;
 
     String popularCountry;
+    String popularAirport;
 
 
     public Country(String Country, String Airport) {
         this.Country = Country;
         this.Airport = Airport;
         this.popularCountry = "";
+        this.popularAirport = "";
     }
 
     public Country() {
         this.popularCountry = "";
+        this.popularAirport = "";
     }
 
     //count most popular arrival/departure country v Hashmaps
@@ -42,7 +45,7 @@ class Country {
     }
 
     // counts the popular airport using hashmaps
-    public String popularAirport(String ArrivalAirport, String DepartureAirport){
+    public void popularAirport(String ArrivalAirport, String DepartureAirport) {
         String popularAirport = "";
         Map<String, Integer> popularAirportCount = new HashMap<>();
         updateAirportFrequency(popularAirportCount, ArrivalAirport, DepartureAirport);
@@ -55,7 +58,6 @@ class Country {
                 popularAirport = entry.getKey();
             }
         }
-        return popularAirport;
     }
 
     // up the count in the popular airport count using both the arrival and departure airports

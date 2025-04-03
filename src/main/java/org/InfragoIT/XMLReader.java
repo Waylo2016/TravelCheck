@@ -74,6 +74,10 @@ public class XMLReader {
 
                     Element element = (Element) node;
                     xmlRecord current = new xmlRecord();
+                    current.werknemer = new Werknemer();
+                    current.oorsprongsland = new Oorsprongsland();
+                    current.aankomstland = new Aankomstland();
+                    current.bedrijf = new Bedrijf();
                     // get text
                     current.werknemer.Personeelsnummer = element.getElementsByTagName("Personeelsnummer").item(0).getTextContent(); // read XML file into separate strings for printing and further use
                     current.werknemer.Personeelsnaam = element.getElementsByTagName("Personeelsnaam").item(0).getTextContent();
