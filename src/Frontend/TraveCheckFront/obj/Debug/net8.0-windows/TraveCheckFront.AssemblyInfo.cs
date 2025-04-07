@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TraveCheckFront")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+75380ab38b2cbff0954b61a12942954457e236b2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6ac10f9a1a647c8719eea12a151e76c96a2d8c2b")]
 [assembly: System.Reflection.AssemblyProductAttribute("TraveCheckFront")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TraveCheckFront")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

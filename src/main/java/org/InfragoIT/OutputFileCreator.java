@@ -17,7 +17,7 @@ public class OutputFileCreator {
 
     {
         try {
-            OutputFile = new FileWriter("CompletedCheck.csv");
+            OutputFile = new FileWriter("C:\\Users\\stijn\\TravelCheck\\CSVOutput\\CompletedCheck.csv");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -27,7 +27,7 @@ public class OutputFileCreator {
 
 
     public void OutputFileWriter(String ErrorWrong, String ErrorPnumber, String ErrorMsg, String ErrorRight) {
-
+        hasWritten = false;
 
         if (!hasWritten) {
             hasWritten = true;

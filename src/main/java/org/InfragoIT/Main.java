@@ -1,6 +1,9 @@
 package org.InfragoIT;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 
 class Werknemer {
     String Personeelsnummer = "";
@@ -8,7 +11,6 @@ class Werknemer {
     String Email = "";
     String RedenVoorReis = "";
     String MethodOfTravel = "";
-
 
 
     public Werknemer() { // maak klasse voor werknemer
@@ -34,21 +36,24 @@ class Bedrijf { // maak klasse voor bedrijven
 
 }
 
-public class App {
+public class Main {
 
     static Connection conn;
     static boolean hasRun = false;
 
 
+
     public static void main(String[] args) {
 
-
         try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
             String url = "jdbc:mysql://infragotraveldatabase.mysql.database.azure.com";
             String user = "InfraGoAdmin";
             String password = "InfraGo20";
             conn = DriverManager.getConnection(url, user, password);
         } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
 
@@ -60,9 +65,9 @@ public class App {
         Country country = new Country();
         OutputFileCreator fileOut = new OutputFileCreator();
         SQL sql = new SQL();
-
-
         Country countryCount = new Country();
+
+
         for (xmlRecord current : reader.xmlRecords) {
 
             current.werknemer.Personeelsnaam = current.werknemer.Personeelsnaam.replaceAll("-", " ");
@@ -74,21 +79,12 @@ public class App {
 
             countryCount.popularCountry(current.aankomstland.Country, current.oorsprongsland.Country);
             countryCount.popularAirport(current.aankomstland.Airport, current.oorsprongsland.Airport);
-            /*
-            if ((counter == current.werknemer.Personeelsnummer.size() - 1)) {
-                System.out.println("The most popular country is: " + (country.popularCountry(reader.ArrivalCountries.get(counter), reader.DepartureCountries.get(counter))));
-                fileOut.PopularCountry = country.popularCountry(reader.ArrivalCountries.get(counter), reader.DepartureCountries.get(counter));
-                System.out.println("The most popular airport is: " + (country.popularAirport(reader.ArrivalAirports.get(counter), reader.DepartureAirports.get(counter))));
-                fileOut.PopularAirport = country.popularAirport(reader.ArrivalAirports.get(counter), reader.DepartureAirports.get(counter));
-            }
-            */
+
             while (!hasRun) {
                 hasRun = true;
                 try {
-                    sql.SqlComparer(conn, current.werknemer.Personeelsnummer, current.werknemer.Personeelsnaam, current.werknemer.Email, current.werknemer.RedenVoorReis, current.werknemer.MethodOfTravel, current.aankomstland.Airport,
-                            current.aankomstland.Country, current.aankomstland.ArrivalDate, current.oorsprongsland.Airport, current.oorsprongsland.Country, current.oorsprongsland.DepartureDate,
-                            current.bedrijf.Bedrijfsnaam, current.bedrijf.Afdeling);
-
+                    sql.SqlComparer(conn, current.werknemer.Personeelsnummer, current.werknemer.RedenVoorReis, current.aankomstland.Airport, current.aankomstland.Country, current.aankomstland.ArrivalDate,
+                            current.oorsprongsland.Country, current.oorsprongsland.Airport, current.oorsprongsland.DepartureDate, current.bedrijf.Bedrijfsnaam, current.bedrijf.Afdeling);
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }
@@ -98,6 +94,7 @@ public class App {
         }
         System.out.println(countryCount.popularCountry);
         System.out.println(countryCount.popularAirport);
+
         hasRun = false;
     }
 }

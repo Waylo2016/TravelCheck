@@ -29,7 +29,6 @@ class Country {
         int maxCount = 0;
 
 
-
         for (Map.Entry<String, Integer> entry : popularCountryCount.entrySet()) {
             if (entry.getValue() > maxCount) {
                 maxCount = entry.getValue();
@@ -46,7 +45,6 @@ class Country {
 
     // counts the popular airport using hashmaps
     public void popularAirport(String ArrivalAirport, String DepartureAirport) {
-        String popularAirport = "";
         Map<String, Integer> popularAirportCount = new HashMap<>();
         updateAirportFrequency(popularAirportCount, ArrivalAirport, DepartureAirport);
 

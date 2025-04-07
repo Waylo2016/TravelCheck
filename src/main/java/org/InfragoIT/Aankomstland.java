@@ -12,7 +12,7 @@ class Aankomstland extends Country { // maak klasse voor aankomstland
         super();
     }
 
-    public String returnMostCommonAirport(){
+    public String returnMostCommonAirport() {
         String mostCommonAirport = "";
         return mostCommonAirport;
     }

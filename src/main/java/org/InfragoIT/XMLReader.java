@@ -17,30 +17,12 @@ import java.util.ArrayList;
 
 public class XMLReader {
     String userHome = System.getProperty("user.home");
-    public final String FILENAME = userHome +"/TravelCheck/src/Frontend/TraveCheckFront/XmlFolder/XmlUnformedData.xml"; //read CSV file, change to allow for file-dropping
-    /*
-    ArrayList<String> Personeelsnummers = new ArrayList<>(); // create Arraylists to allow for data transfer between XMLReader and Main
-    ArrayList<String> Personeelsnamen = new ArrayList<>();
-    ArrayList<String> EmailAdressen = new ArrayList<>();
-    ArrayList<String> Bedrijfsnamen = new ArrayList<>();
-    ArrayList<String> Afdelingen = new ArrayList<>();
-    ArrayList<String> DepartureAirports = new ArrayList<String>();
-    ArrayList<String> DepartureCountries = new ArrayList<String>();
-    ArrayList<String> ArrivalAirports = new ArrayList<String>();
-    ArrayList<String> ArrivalCountries = new ArrayList<String>();
-    ArrayList<String> TravelMethods = new ArrayList<>();
-    ArrayList<String> TravelReasons= new ArrayList<>();
-    ArrayList<String> DepartureDates = new ArrayList<String>();
-    ArrayList<String> ArrivalDates= new ArrayList<String>();
-
-
-     */
+    public final String FILENAME = userHome + "/TravelCheck/src/Frontend/TraveCheckFront/XmlFolder/XmlUnformedData.xml"; //read CSV file, change to allow for file-dropping
 
     ArrayList<xmlRecord> xmlRecords = new ArrayList<>();
 
 
-    public XMLReader()
-    {
+    public XMLReader() {
 
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 
@@ -84,7 +66,7 @@ public class XMLReader {
                     current.werknemer.Email = element.getElementsByTagName("Email-adres").item(0).getTextContent();
                     current.bedrijf.Bedrijfsnaam = element.getElementsByTagName("Bedrijfsnaam").item(0).getTextContent();
                     current.bedrijf.Afdeling = element.getElementsByTagName("Afdeling").item(0).getTextContent();
-                    current.oorsprongsland.Airport= element.getElementsByTagName("Vertrek-Luchthaven").item(0).getTextContent();
+                    current.oorsprongsland.Airport = element.getElementsByTagName("Vertrek-Luchthaven").item(0).getTextContent();
                     current.oorsprongsland.Country = element.getElementsByTagName("Land-van-oorsprong").item(0).getTextContent();
                     current.aankomstland.Airport = element.getElementsByTagName("Aankomst-Luchthaven").item(0).getTextContent();
                     current.aankomstland.Country = element.getElementsByTagName("Land-van-aankomst").item(0).getTextContent();
@@ -94,22 +76,6 @@ public class XMLReader {
                     current.aankomstland.ArrivalDate = element.getElementsByTagName("Aankomst-datum").item(0).getTextContent();
 
                     xmlRecords.add(current);
-
-                    /*
-                    Personeelsnummers.add(Personeelsnummer); // load data into ArrayList for use in Main
-                    Personeelsnamen.add(personeelsnaam);
-                    EmailAdressen.add(EmailAdres);
-                    Bedrijfsnamen.add(Bedrijfsnaam);
-                    Afdelingen.add(Afdeling);
-                    DepartureAirports.add(VertAir);
-                    DepartureCountries.add(VertLand);
-                    ArrivalCountries.add(AankLand);
-                    ArrivalAirports.add(AankAir);
-                    TravelReasons.add(TravReason);
-                    TravelMethods.add(TravMeth);
-                    DepartureDates.add(DepDate);
-                    ArrivalDates.add(ArrDate);
-                     */
 
                     // FileDelyeeter.FileDeleter();
                 }

@@ -37,8 +37,12 @@ namespace TraveCheckFront
                     filename = fileDialog.SafeFileName; // displays the filename to the user   
                     fullFilename = fileDialog.FileName; // collects the full filepath for python to convert it
                     tbInfo.Text = filename;
-                    CSVConverter.CSVConverter(fullFilename, endValue); // passes the file location through to the csv converter
-                    endValue = endValue;
+                    endValue = CSVConverter.CSVConverter(fullFilename, endValue); // passes the file location through to the csv converter
+                    if (endValue == 1)
+                    {
+                        Environment.Exit(0);
+                    }
+                   
                 }
                 else
                 {

@@ -9,11 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="pythonnet" Version="3.0.5" />
+    <Folder Include="XmlFolder\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="XmlFolder\" />
+    <PackageReference Include="IKVM" Version="8.11.2" />
   </ItemGroup>
 
 </Project>

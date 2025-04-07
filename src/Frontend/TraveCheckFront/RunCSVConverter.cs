@@ -8,7 +8,7 @@ namespace TraveCheckFront
         public int CSVConverter(string Filename, int returnvalue)
         {
             string dir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "TravelCheck\\src\\Frontend\\TraveCheckFront\\XmlFolder\\XmlUnformedData.xml");
-            if (!File.Exists(dir) { 
+            if (!File.Exists(dir)) { 
                 File.Create(dir);
             }
 
