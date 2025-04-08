@@ -41,8 +41,6 @@ public class Main {
     static Connection conn;
     static boolean hasRun = false;
 
-
-
     public static void main(String[] args) {
 
         try {
