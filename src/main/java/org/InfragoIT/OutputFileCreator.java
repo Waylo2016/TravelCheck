@@ -34,7 +34,7 @@ public class OutputFileCreator {
         }
 
 
-        ArrayList<String> entries = new ArrayList();
+        ArrayList<String> entries = new ArrayList<>();
         entries.add(ErrorMsg);
         entries.add(ErrorPnumber);
         entries.add(ErrorWrong);

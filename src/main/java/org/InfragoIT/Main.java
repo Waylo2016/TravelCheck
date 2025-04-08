@@ -6,11 +6,11 @@ import java.sql.SQLException;
 
 
 class Werknemer {
-    String Personeelsnummer = "";
-    String Personeelsnaam = "";
-    String Email = "";
-    String RedenVoorReis = "";
-    String MethodOfTravel = "";
+    String Personeelsnummer;
+    String Personeelsnaam;
+    String Email;
+    String RedenVoorReis;
+    String MethodOfTravel;
 
 
     public Werknemer() { // maak klasse voor werknemer
@@ -49,19 +49,11 @@ public class Main {
             String user = "InfraGoAdmin";
             String password = "InfraGo20";
             conn = DriverManager.getConnection(url, user, password);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
 
-        Werknemer werknemer = new Werknemer();
-        Oorsprongsland oorsprongsland = new Oorsprongsland();
-        Aankomstland aankomstland = new Aankomstland();
-        Bedrijf bedrijf = new Bedrijf();
         XMLReader reader = new XMLReader();
-        Country country = new Country();
-        OutputFileCreator fileOut = new OutputFileCreator();
         SQL sql = new SQL();
         Country countryCount = new Country();
 
