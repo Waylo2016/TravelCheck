@@ -9,6 +9,6 @@ class Oorsprongsland extends Country { // maak klasse van oorsprongsland
     }
 
     public Oorsprongsland() {
-        super();
+        this(null, null, null);
     }
 }

@@ -8,8 +8,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class OutputFileCreator {
-    String PopularCountry = "";
-    String PopularAirport = "";
     // flag to check if header is written
     boolean hasWritten = false;
 

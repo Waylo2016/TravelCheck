@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class XMLReader {
     String userHome = System.getProperty("user.home");
-    public final String FILENAME = userHome + "/TravelCheck/src/main/XmlFolder/XmlUnformedData.xml"; //read CSV file, change to allow for file-dropping
+    public final String FILENAME = userHome + "/TravelCheck/src/main/XmlFolder/XmlUnformedData.xml"; //read CSV file. Only use the C# code to create new XML file from Project Stijn - Blad 1.csv in working directory
 
     ArrayList<xmlRecord> xmlRecords = new ArrayList<>();
 
@@ -60,6 +60,7 @@ public class XMLReader {
                     current.oorsprongsland = new Oorsprongsland();
                     current.aankomstland = new Aankomstland();
                     current.bedrijf = new Bedrijf();
+
                     // get text
                     current.werknemer.Personeelsnummer = element.getElementsByTagName("Personeelsnummer").item(0).getTextContent(); // read XML file into separate strings for printing and further use
                     current.werknemer.Personeelsnaam = element.getElementsByTagName("Personeelsnaam").item(0).getTextContent();
@@ -75,9 +76,7 @@ public class XMLReader {
                     current.oorsprongsland.DepartureDate = element.getElementsByTagName("Vertrekdatum").item(0).getTextContent();
                     current.aankomstland.ArrivalDate = element.getElementsByTagName("Aankomst-datum").item(0).getTextContent();
 
-                    xmlRecords.add(current);
-
-                    // FileDelyeeter.FileDeleter();
+                    xmlRecords.add(current); // adds the current data to the arraylist
                 }
             }
 

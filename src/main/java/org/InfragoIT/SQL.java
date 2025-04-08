@@ -23,12 +23,16 @@ public class SQL {
 
 
     public void SqlComparer(Connection conn, String personeelsnummer, String RedenVoorReis, String AankomstAirpot, String AankomstLand, String AankomstDatum, String OorsprongsLand, String OorsprongsAirport, String OorsprongsDatum, String CompanyName, String Department) throws SQLException {
-        OutputFileCreator fOut = new OutputFileCreator();
-        String SQL = "{call bamtravelcheck.selectForEquation(?)}";
-        try (CallableStatement cstmt = conn.prepareCall(SQL)) {
-            cstmt.setString(1, personeelsnummer);
-            ResultSet rs = cstmt.executeQuery();
-            while (rs.next()) {
+
+        OutputFileCreator fOut = new OutputFileCreator(); // create object for the output file creator for later use
+
+        String SQL = "{call bamtravelcheck.selectForEquation(?)}"; //create sql statement that calls stored procedure in mysql database. Stored Procedure is also in the SQLRollback.sql file
+
+        try (CallableStatement cstmt = conn.prepareCall(SQL)) { //assigns the stuff in the SQL string to the conn object
+            cstmt.setString(1, personeelsnummer); // assigns value to ? in the callable statement
+
+            ResultSet rs = cstmt.executeQuery(); // executes query and assigns it to result set
+            while (rs.next()) { // while resultset (rs) has a result, do the following:
                         /*
                         column index numbers:
                         1 = Personeelsnummer
@@ -131,6 +135,8 @@ public class SQL {
                     ErrorPnumber = DBPnumber;
                     fOut.OutputFileWriter(ErrorWrong, ErrorPnumber, ErrorMsg, ErrorRight);
                 }
+
+
 
             }
         }

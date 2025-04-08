@@ -18,8 +18,7 @@ class Country {
     }
 
     public Country() {
-        this.popularCountry = "";
-        this.popularAirport = "";
+        this(null, null);
     }
 
     //count most popular arrival/departure country v Hashmaps
