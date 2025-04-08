@@ -1,0 +1,66 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\stijn\\TravelCheck\\src\\Frontend\\TraveCheckFront\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A329779E-FA83-4459-83C7-B5CA054243F9}|TraveCheckFront.csproj|c:\\users\\stijn\\travelcheck\\src\\frontend\\travecheckfront\\runcsvconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A329779E-FA83-4459-83C7-B5CA054243F9}|TraveCheckFront.csproj|solutionrelative:runcsvconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A329779E-FA83-4459-83C7-B5CA054243F9}|TraveCheckFront.csproj|c:\\users\\stijn\\travelcheck\\src\\frontend\\travecheckfront\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A329779E-FA83-4459-83C7-B5CA054243F9}|TraveCheckFront.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RunCSVConverter.cs",
+              "DocumentMoniker": "C:\\Users\\stijn\\TravelCheck\\src\\Frontend\\TraveCheckFront\\RunCSVConverter.cs",
+              "RelativeDocumentMoniker": "RunCSVConverter.cs",
+              "ToolTip": "C:\\Users\\stijn\\TravelCheck\\src\\Frontend\\TraveCheckFront\\RunCSVConverter.cs",
+              "RelativeToolTip": "RunCSVConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T14:23:01.505Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\stijn\\TravelCheck\\src\\Frontend\\TraveCheckFront\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\stijn\\TravelCheck\\src\\Frontend\\TraveCheckFront\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAgwCoAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T14:25:24.966Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

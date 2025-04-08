@@ -1,0 +1,10 @@
+org\InfragoIT\Werknemer.class
+org\InfragoIT\XMLReader.class
+org\InfragoIT\xmlRecord.class
+org\InfragoIT\Aankomstland.class
+org\InfragoIT\Bedrijf.class
+org\InfragoIT\SQL.class
+org\InfragoIT\Oorsprongsland.class
+org\InfragoIT\Country.class
+org\InfragoIT\OutputFileCreator.class
+org\InfragoIT\Main.class
