@@ -27,7 +27,6 @@ public class OutputFileCreator {
 
 
     public void OutputFileWriter(String ErrorWrong, String ErrorPnumber, String ErrorMsg, String ErrorRight) {
-        hasWritten = false;
 
         if (!hasWritten) {
             hasWritten = true;
