@@ -1,15 +1,15 @@
 package org.InfragoIT;
 
 class Aankomstland extends Country { // maak klasse voor aankomstland
-    String ArrivalDate;
+    String arrivalDate;
 
-    public Aankomstland(String ArrivalDate, String Country, String Airport) {
+    public Aankomstland(String arrivalDate, String Country, String Airport) {
         super(Country, Airport);
-        this.ArrivalDate = ArrivalDate;
+        this.arrivalDate = arrivalDate;
     }
 
     public Aankomstland() {
-        super();
+        this(null, null, null);
     }
 
     public String returnMostCommonAirport() {

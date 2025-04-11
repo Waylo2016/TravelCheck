@@ -7,30 +7,30 @@ import java.sql.SQLException;
 
 class Werknemer {
     String Personeelsnummer = "";
-    String Personeelsnaam = "";
+    String personeelsnaam = "";
     String Email = "";
-    String RedenVoorReis = "";
-    String MethodOfTravel = "";
+    String redenVoorReis = "";
+    String methodOfTravel = "";
 
 
     public Werknemer() { // maak klasse voor werknemer
         this.Personeelsnummer = "";
-        this.Personeelsnaam = "";
+        this.personeelsnaam = "";
         this.Email = "";
-        this.RedenVoorReis = "";
-        this.MethodOfTravel = "";
+        this.redenVoorReis = "";
+        this.methodOfTravel = "";
     }
 
 }
 
 
 class Bedrijf { // maak klasse voor bedrijven
-    String Bedrijfsnaam;
-    String Afdeling;
+    String bedrijfsnaam;
+    String afdeling;
 
     public Bedrijf() {
-        this.Afdeling = Afdeling;
-        this.Bedrijfsnaam = Bedrijfsnaam;
+        this.afdeling = afdeling;
+        this.bedrijfsnaam = bedrijfsnaam;
 
     }
 
@@ -68,21 +68,21 @@ public class Main {
 
         for (xmlRecord current : reader.xmlRecords) {
 
-            current.werknemer.Personeelsnaam = current.werknemer.Personeelsnaam.replaceAll("-", " ");
-            current.werknemer.RedenVoorReis = current.werknemer.RedenVoorReis.replaceAll("-", " ");
-            current.werknemer.MethodOfTravel = current.werknemer.MethodOfTravel.replaceAll("-", " ");
-            current.bedrijf.Bedrijfsnaam = current.bedrijf.Bedrijfsnaam.replaceAll("-", " ");
-            current.aankomstland.Airport = current.aankomstland.Airport.replaceAll("-", " ");
-            current.oorsprongsland.Airport = current.oorsprongsland.Airport.replaceAll("-", " ");
+            current.werknemer.personeelsnaam = current.werknemer.personeelsnaam.replaceAll("-", " ");
+            current.werknemer.redenVoorReis = current.werknemer.redenVoorReis.replaceAll("-", " ");
+            current.werknemer.methodOfTravel = current.werknemer.methodOfTravel.replaceAll("-", " ");
+            current.bedrijf.bedrijfsnaam = current.bedrijf.bedrijfsnaam.replaceAll("-", " ");
+            current.aankomstland.airport = current.aankomstland.airport.replaceAll("-", " ");
+            current.oorsprongsland.airport = current.oorsprongsland.airport.replaceAll("-", " ");
 
-            countryCount.popularCountry(current.aankomstland.Country, current.oorsprongsland.Country);
-            countryCount.popularAirport(current.aankomstland.Airport, current.oorsprongsland.Airport);
+            countryCount.popularCountry(current.aankomstland.country, current.oorsprongsland.country);
+            countryCount.popularAirport(current.aankomstland.airport, current.oorsprongsland.airport);
 
             while (!hasRun) {
                 hasRun = true;
                 try {
-                    sql.SqlComparer(conn, current.werknemer.Personeelsnummer, current.werknemer.RedenVoorReis, current.aankomstland.Airport, current.aankomstland.Country, current.aankomstland.ArrivalDate,
-                            current.oorsprongsland.Country, current.oorsprongsland.Airport, current.oorsprongsland.DepartureDate, current.bedrijf.Bedrijfsnaam, current.bedrijf.Afdeling);
+                    sql.SqlComparer(conn, current.werknemer.Personeelsnummer, current.werknemer.redenVoorReis, current.aankomstland.airport, current.aankomstland.country, current.aankomstland.arrivalDate,
+                            current.oorsprongsland.country, current.oorsprongsland.airport, current.oorsprongsland.departureDate, current.bedrijf.bedrijfsnaam, current.bedrijf.afdeling);
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }

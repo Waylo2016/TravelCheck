@@ -26,7 +26,7 @@ public class OutputFileCreator {
     CSVWriter writer = new CSVWriter(OutputFile);
 
 
-    public void OutputFileWriter(String ErrorWrong, String ErrorPnumber, String ErrorMsg, String ErrorRight) {
+    public void OutputFileWriter(String errorWrong, String errorPnumber, String errorMsg, String errorRight) {
 
         if (!hasWritten) {
             hasWritten = true;
@@ -37,10 +37,10 @@ public class OutputFileCreator {
 
 
         ArrayList<String> entries = new ArrayList();
-        entries.add(ErrorMsg);
-        entries.add(ErrorPnumber);
-        entries.add(ErrorWrong);
-        entries.add(ErrorRight);
+        entries.add(errorMsg);
+        entries.add(errorPnumber);
+        entries.add(errorWrong);
+        entries.add(errorRight);
 
         writer.writeNext(entries.toArray(new String[entries.size()]));
         try {

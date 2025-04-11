@@ -3,23 +3,22 @@ package org.InfragoIT;
 import java.util.*;
 
 class Country {
-    String Country;
-    String Airport;
+    String country;
+    String airport;
 
     String popularCountry;
     String popularAirport;
 
 
     public Country(String Country, String Airport) {
-        this.Country = Country;
-        this.Airport = Airport;
+        this.country = Country;
+        this.airport = Airport;
         this.popularCountry = "";
         this.popularAirport = "";
     }
 
     public Country() {
-        this.popularCountry = "";
-        this.popularAirport = "";
+        this(null, null);
     }
 
     //count most popular arrival/departure country v Hashmaps

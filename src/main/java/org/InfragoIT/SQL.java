@@ -3,23 +3,23 @@ package org.InfragoIT;
 import java.sql.*;
 
 public class SQL {
-    String DBPnumber;
-    String DBPname;
-    String DBEmail;
-    String DBReasonForTravel;
-    String DBMethodOfTravel;
-    String DBArrivalAirport;
-    String DBDepartureAirport;
-    String DBArrivalCountry;
-    String DBDepartureCountry;
-    String DBArrivalDate;
-    String DBDepartureDate;
+    String db_Pnumber;
+    String db_Pname;
+    String db_Email;
+    String db_ReasonForTravel;
+    String db_MethodOfTravel;
+    String db_ArrivalAirport;
+    String db_DepartureAirport;
+    String db_ArrivalCountry;
+    String db_DepartureCountry;
+    String db_ArrivalDate;
+    String db_DepartureDate;
     String DBDepartment;
-    String DBCompanyName;
-    String ErrorPnumber;
-    String ErrorMsg;
-    String ErrorWrong;
-    String ErrorRight;
+    String db_CompanyName;
+    String errorPnumber;
+    String errorMsg;
+    String errorWrong;
+    String errorRight;
 
 
     public void SqlComparer(Connection conn, String personeelsnummer, String RedenVoorReis, String AankomstAirpot, String AankomstLand, String AankomstDatum, String OorsprongsLand, String OorsprongsAirport, String OorsprongsDatum, String CompanyName, String Department) throws SQLException {
@@ -32,12 +32,12 @@ public class SQL {
                         /*
                         column index numbers:
                         1 = Personeelsnummer
-                        2 = Personeelsnaam
+                        2 = personeelsnaam
                         3 = EmailAdres
-                        4 = RedenVoorReis
+                        4 = redenVoorReis
                         5 = MethodeVanVervoer
-                        6 = Bedrijfsnaam
-                        7 = Afdeling
+                        6 = bedrijfsnaam
+                        7 = afdeling
                         8 = VliegveldID (OorsprongsAirport)
                         9 = Land van oorsprong
                         10 = Vertrekdatum
@@ -46,90 +46,90 @@ public class SQL {
                         13 = aankomstdatum
                          */
 
-                DBPnumber = rs.getString(1);
-                DBPname = rs.getString(2);
-                DBEmail = rs.getString(3);
-                DBReasonForTravel = rs.getString(4);
-                DBMethodOfTravel = rs.getString(5);
-                DBCompanyName = rs.getString(6);
+                db_Pnumber = rs.getString(1);
+                db_Pname = rs.getString(2);
+                db_Email = rs.getString(3);
+                db_ReasonForTravel = rs.getString(4);
+                db_MethodOfTravel = rs.getString(5);
+                db_CompanyName = rs.getString(6);
                 DBDepartment = rs.getString(7);
-                DBDepartureAirport = rs.getString(8);
-                DBDepartureCountry = rs.getString(9);
-                DBDepartureDate = rs.getString(10);
-                DBArrivalAirport = rs.getString(11);
-                DBArrivalCountry = rs.getString(12);
-                DBArrivalDate = rs.getString(13);
+                db_DepartureAirport = rs.getString(8);
+                db_DepartureCountry = rs.getString(9);
+                db_DepartureDate = rs.getString(10);
+                db_ArrivalAirport = rs.getString(11);
+                db_ArrivalCountry = rs.getString(12);
+                db_ArrivalDate = rs.getString(13);
 
-                DBPname = DBPname.replaceAll("-", " ");
-                DBReasonForTravel = DBReasonForTravel.replaceAll("-", " ");
-                DBMethodOfTravel = DBMethodOfTravel.replaceAll("-", " ");
-                DBDepartureAirport = DBDepartureAirport.replaceAll("-", " ");
-                DBArrivalAirport = DBArrivalAirport.replaceAll("-", " ");
-                DBCompanyName = DBCompanyName.replaceAll("-", " ");
+                db_Pname = db_Pname.replaceAll("-", " ");
+                db_ReasonForTravel = db_ReasonForTravel.replaceAll("-", " ");
+                db_MethodOfTravel = db_MethodOfTravel.replaceAll("-", " ");
+                db_DepartureAirport = db_DepartureAirport.replaceAll("-", " ");
+                db_ArrivalAirport = db_ArrivalAirport.replaceAll("-", " ");
+                db_CompanyName = db_CompanyName.replaceAll("-", " ");
 
 
                 if (!DBDepartment.contains(Department)) {
-                    ErrorMsg = "Departement voor: " + DBPname + " is fout";
-                    ErrorWrong = Department;
-                    ErrorRight = DBDepartment;
-                    ErrorPnumber = DBPnumber;
-                    fOut.OutputFileWriter(ErrorWrong, ErrorPnumber, ErrorMsg, ErrorRight);
+                    errorMsg = "Departement voor: " + db_Pname + " is fout";
+                    errorWrong = Department;
+                    errorRight = DBDepartment;
+                    errorPnumber = db_Pnumber;
+                    fOut.OutputFileWriter(errorWrong, errorPnumber, errorMsg, errorRight);
                 }
-                if (!DBReasonForTravel.contains(RedenVoorReis)) {
-                    ErrorMsg = "Reden voor reis is fout voor: " + DBPname;
-                    ErrorWrong = RedenVoorReis;
-                    ErrorRight = DBReasonForTravel;
-                    ErrorPnumber = DBPnumber;
-                    fOut.OutputFileWriter(ErrorWrong, ErrorPnumber, ErrorMsg, ErrorRight);
+                if (!db_ReasonForTravel.contains(RedenVoorReis)) {
+                    errorMsg = "Reden voor reis is fout voor: " + db_Pname;
+                    errorWrong = RedenVoorReis;
+                    errorRight = db_ReasonForTravel;
+                    errorPnumber = db_Pnumber;
+                    fOut.OutputFileWriter(errorWrong, errorPnumber, errorMsg, errorRight);
                 }
-                if (!DBDepartureAirport.contains(OorsprongsAirport)) {
-                    ErrorMsg = "Oorsprongsvluchthaven is fout voor: " + DBPname;
-                    ErrorWrong = OorsprongsAirport;
-                    ErrorRight = DBDepartureAirport;
-                    ErrorPnumber = DBPnumber;
-                    fOut.OutputFileWriter(ErrorWrong, ErrorPnumber, ErrorMsg, ErrorRight);
+                if (!db_DepartureAirport.contains(OorsprongsAirport)) {
+                    errorMsg = "Oorsprongsvluchthaven is fout voor: " + db_Pname;
+                    errorWrong = OorsprongsAirport;
+                    errorRight = db_DepartureAirport;
+                    errorPnumber = db_Pnumber;
+                    fOut.OutputFileWriter(errorWrong, errorPnumber, errorMsg, errorRight);
                 }
-                if (!DBArrivalAirport.contains(AankomstAirpot)) {
-                    ErrorMsg = "Aankomstluchthaven is fout voor: " + DBPname;
-                    ErrorWrong = AankomstAirpot;
-                    ErrorRight = DBArrivalAirport;
-                    ErrorPnumber = DBPnumber;
-                    fOut.OutputFileWriter(ErrorWrong, ErrorPnumber, ErrorMsg, ErrorRight);
+                if (!db_ArrivalAirport.contains(AankomstAirpot)) {
+                    errorMsg = "Aankomstluchthaven is fout voor: " + db_Pname;
+                    errorWrong = AankomstAirpot;
+                    errorRight = db_ArrivalAirport;
+                    errorPnumber = db_Pnumber;
+                    fOut.OutputFileWriter(errorWrong, errorPnumber, errorMsg, errorRight);
                 }
-                if (!DBCompanyName.contains(CompanyName)) {
-                    ErrorMsg = "Bedrijfsnaam is fout voor: " + DBPname;
-                    ErrorWrong = CompanyName;
-                    ErrorRight = DBCompanyName;
-                    ErrorPnumber = DBPnumber;
-                    fOut.OutputFileWriter(ErrorWrong, ErrorPnumber, ErrorMsg, ErrorRight);
+                if (!db_CompanyName.contains(CompanyName)) {
+                    errorMsg = "bedrijfsnaam is fout voor: " + db_Pname;
+                    errorWrong = CompanyName;
+                    errorRight = db_CompanyName;
+                    errorPnumber = db_Pnumber;
+                    fOut.OutputFileWriter(errorWrong, errorPnumber, errorMsg, errorRight);
                 }
-                if (!DBArrivalCountry.contains(AankomstLand)) {
-                    ErrorMsg = "Aankomstland is fout voor: " + DBPname;
-                    ErrorWrong = OorsprongsAirport;
-                    ErrorRight = DBDepartureAirport;
-                    ErrorPnumber = DBPnumber;
-                    fOut.OutputFileWriter(ErrorWrong, ErrorPnumber, ErrorMsg, ErrorRight);
+                if (!db_ArrivalCountry.contains(AankomstLand)) {
+                    errorMsg = "Aankomstland is fout voor: " + db_Pname;
+                    errorWrong = OorsprongsAirport;
+                    errorRight = db_DepartureAirport;
+                    errorPnumber = db_Pnumber;
+                    fOut.OutputFileWriter(errorWrong, errorPnumber, errorMsg, errorRight);
                 }
-                if (!DBDepartureCountry.contains(OorsprongsLand)) {
-                    ErrorMsg = "Oorsprongsland is fout voor: " + DBPname;
-                    ErrorWrong = OorsprongsLand;
-                    ErrorRight = DBDepartureCountry;
-                    ErrorPnumber = DBPnumber;
-                    fOut.OutputFileWriter(ErrorWrong, ErrorPnumber, ErrorMsg, ErrorRight);
+                if (!db_DepartureCountry.contains(OorsprongsLand)) {
+                    errorMsg = "Oorsprongsland is fout voor: " + db_Pname;
+                    errorWrong = OorsprongsLand;
+                    errorRight = db_DepartureCountry;
+                    errorPnumber = db_Pnumber;
+                    fOut.OutputFileWriter(errorWrong, errorPnumber, errorMsg, errorRight);
                 }
-                if (!DBDepartureDate.contains(OorsprongsDatum)) {
-                    ErrorMsg = "Vertrekdatum is fout voor: " + DBPname;
-                    ErrorWrong = OorsprongsDatum;
-                    ErrorRight = DBDepartureDate;
-                    ErrorPnumber = DBPnumber;
-                    fOut.OutputFileWriter(ErrorWrong, ErrorPnumber, ErrorMsg, ErrorRight);
+                if (!db_DepartureDate.contains(OorsprongsDatum)) {
+                    errorMsg = "Vertrekdatum is fout voor: " + db_Pname;
+                    errorWrong = OorsprongsDatum;
+                    errorRight = db_DepartureDate;
+                    errorPnumber = db_Pnumber;
+                    fOut.OutputFileWriter(errorWrong, errorPnumber, errorMsg, errorRight);
                 }
-                if (!DBArrivalDate.contains(AankomstDatum)) {
-                    ErrorMsg = "Aankomstdatum is fout voor: " + DBPname;
-                    ErrorWrong = AankomstDatum;
-                    ErrorRight = DBArrivalDate;
-                    ErrorPnumber = DBPnumber;
-                    fOut.OutputFileWriter(ErrorWrong, ErrorPnumber, ErrorMsg, ErrorRight);
+                if (!db_ArrivalDate.contains(AankomstDatum)) {
+                    errorMsg = "Aankomstdatum is fout voor: " + db_Pname;
+                    errorWrong = AankomstDatum;
+                    errorRight = db_ArrivalDate;
+                    errorPnumber = db_Pnumber;
+                    fOut.OutputFileWriter(errorWrong, errorPnumber, errorMsg, errorRight);
                 }
 
             }

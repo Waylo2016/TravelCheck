@@ -62,18 +62,18 @@ public class XMLReader {
                     current.bedrijf = new Bedrijf();
                     // get text
                     current.werknemer.Personeelsnummer = element.getElementsByTagName("Personeelsnummer").item(0).getTextContent(); // read XML file into separate strings for printing and further use
-                    current.werknemer.Personeelsnaam = element.getElementsByTagName("Personeelsnaam").item(0).getTextContent();
+                    current.werknemer.personeelsnaam = element.getElementsByTagName("personeelsnaam").item(0).getTextContent();
                     current.werknemer.Email = element.getElementsByTagName("Email-adres").item(0).getTextContent();
-                    current.bedrijf.Bedrijfsnaam = element.getElementsByTagName("Bedrijfsnaam").item(0).getTextContent();
-                    current.bedrijf.Afdeling = element.getElementsByTagName("Afdeling").item(0).getTextContent();
-                    current.oorsprongsland.Airport = element.getElementsByTagName("Vertrek-Luchthaven").item(0).getTextContent();
-                    current.oorsprongsland.Country = element.getElementsByTagName("Land-van-oorsprong").item(0).getTextContent();
-                    current.aankomstland.Airport = element.getElementsByTagName("Aankomst-Luchthaven").item(0).getTextContent();
-                    current.aankomstland.Country = element.getElementsByTagName("Land-van-aankomst").item(0).getTextContent();
-                    current.werknemer.MethodOfTravel = element.getElementsByTagName("Methode-van-vervoer").item(0).getTextContent();
-                    current.werknemer.RedenVoorReis = element.getElementsByTagName("Reason-for-travel").item(0).getTextContent();
-                    current.oorsprongsland.DepartureDate = element.getElementsByTagName("Vertrekdatum").item(0).getTextContent();
-                    current.aankomstland.ArrivalDate = element.getElementsByTagName("Aankomst-datum").item(0).getTextContent();
+                    current.bedrijf.bedrijfsnaam = element.getElementsByTagName("bedrijfsnaam").item(0).getTextContent();
+                    current.bedrijf.afdeling = element.getElementsByTagName("afdeling").item(0).getTextContent();
+                    current.oorsprongsland.airport = element.getElementsByTagName("Vertrek-Luchthaven").item(0).getTextContent();
+                    current.oorsprongsland.country = element.getElementsByTagName("Land-van-oorsprong").item(0).getTextContent();
+                    current.aankomstland.airport = element.getElementsByTagName("Aankomst-Luchthaven").item(0).getTextContent();
+                    current.aankomstland.country = element.getElementsByTagName("Land-van-aankomst").item(0).getTextContent();
+                    current.werknemer.methodOfTravel = element.getElementsByTagName("Methode-van-vervoer").item(0).getTextContent();
+                    current.werknemer.redenVoorReis = element.getElementsByTagName("Reason-for-travel").item(0).getTextContent();
+                    current.oorsprongsland.departureDate = element.getElementsByTagName("Vertrekdatum").item(0).getTextContent();
+                    current.aankomstland.arrivalDate = element.getElementsByTagName("Aankomst-datum").item(0).getTextContent();
 
                     xmlRecords.add(current);
 
