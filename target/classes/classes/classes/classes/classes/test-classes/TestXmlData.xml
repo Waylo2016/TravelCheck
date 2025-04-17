@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Werknemers>
+    <Werknemer>
+        <Personeelsnummer>1234567</Personeelsnummer>
+        <personeelsnaam>Test-User</personeelsnaam>
+        <Email-adres>test.user@INFRAGoTest.com</Email-adres>
+        <bedrijfsnaam>INFRAGoTest</bedrijfsnaam>
+        <afdeling>TestDepartment</afdeling>
+        <Vertrek-Luchthaven>Test-Airport</Vertrek-Luchthaven>
+        <Land-van-oorsprong>TestCountry</Land-van-oorsprong>
+        <Aankomst-Luchthaven>Destination-Airport</Aankomst-Luchthaven>
+        <Land-van-aankomst>DestinationCountry</Land-van-aankomst>
+        <Methode-van-vervoer>Flight</Methode-van-vervoer>
+        <Reason-for-travel>Test</Reason-for-travel>
+        <Vertrekdatum>2025-01-01</Vertrekdatum>
+        <Aankomst-datum>2025-01-02</Aankomst-datum>
+    </Werknemer>
+</Werknemers>
